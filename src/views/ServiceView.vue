@@ -164,5 +164,10 @@ const seed = computed(() => (props.service === 'mfr' ? 17 : 31))
   .what,
   .other,
   .close { grid-template-columns: 1fr; }
+  .ideal { padding-bottom: 7rem; }
+  .plant { height: 10rem; }
+  [data-element='air'] .plant { height: 12rem; top: auto; bottom: -2rem; }
+  .go { justify-self: stretch; }
+  .close-cta { min-height: 4.5rem; }
 }
 </style>

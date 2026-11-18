@@ -88,8 +88,12 @@ h3 { font-size: 1.45rem; color: var(--color-ruby); }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 540px) {
-  .step { grid-template-columns: 7rem 1fr; grid-template-rows: none; }
-  .glass { aspect-ratio: auto; }
+  .step { grid-template-columns: 6.5rem 1fr; grid-template-rows: none; }
+  .glass { aspect-ratio: auto; min-height: 100%; }
+  .glass > svg { height: 100%; }
+  .copy { padding: 1.2rem 1.1rem 1.3rem; }
+  h3 { font-size: 1.3rem; }
+  .copy p { font-size: 1rem; }
   .steps { grid-template-columns: 1fr; }
 }
 </style>

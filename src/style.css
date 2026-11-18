@@ -210,3 +210,15 @@ a { color: inherit; }
   box-shadow: inset 0 0 40px rgb(40 70 120 / 0.12);
 }
 [data-element='air'] { --color-ink-soft: #3d4560; --color-ink: #1d2340; }
+
+/* ── Phones ─────────────────────────────────────────────────────────────
+   Tighter rhythm, and no fixed-attachment background (it forces a full
+   repaint on every scroll frame on mobile browsers). */
+@media (max-width: 860px) {
+  body { background-attachment: scroll; }
+  .section { padding-block: 3.25rem; }
+  .section-head > :first-child { padding: 2.4rem 1.25rem 1.1rem; }
+  .section-head { border-radius: 50% 50% 0 0 / 5.5rem 5.5rem 0 0; }
+  .section-head > :first-child { border-radius: 50% 50% 0 0 / calc(5.5rem - var(--came)) calc(5.5rem - var(--came)) 0 0; }
+  .section-head p { font-size: 1.05rem; }
+}

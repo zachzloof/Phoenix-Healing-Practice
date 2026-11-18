@@ -90,5 +90,8 @@ ul { display: grid; gap: 0.6rem; margin: 0; padding: 0; list-style: none; color:
 
 @media (max-width: 860px) {
   .grid { grid-template-columns: 1fr; }
+  ul { gap: 0.15rem; }
+  .col a { display: inline-block; padding-block: 0.4rem; }
+  .base { padding-inline: 16px; }
 }
 </style>

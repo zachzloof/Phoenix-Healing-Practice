@@ -19,6 +19,7 @@ export function useFirelight(elRef, { ignite = false, rest = { x: 50, y: 46 }, r
   const state = { x: rest.x, y: ignite ? 96 : rest.y, r: ignite ? 6 : radius, i: ignite ? 0.2 : 1 }
   let mm
   let onMove
+  let io
 
   const paint = () => {
     const el = elRef.value
@@ -57,7 +58,13 @@ export function useFirelight(elRef, { ignite = false, rest = { x: 50, y: 46 }, r
         }
 
         if (breathe) {
-          const flicker = () =>
+          // breathe only while the window is on screen; off screen it rests,
+          // so a long page never keeps several fires repainting unseen
+          let onScreen = true
+          let breathing = false
+          const flicker = () => {
+            if (!onScreen) return (breathing = false)
+            breathing = true
             gsap.to(state, {
               r: radius + gsap.utils.random(-4, 4),
               i: gsap.utils.random(0.86, 1),
@@ -66,7 +73,13 @@ export function useFirelight(elRef, { ignite = false, rest = { x: 50, y: 46 }, r
               onUpdate: paint,
               onComplete: flicker,
             })
-          tl.call(flicker)
+          }
+          io = new IntersectionObserver(([entry]) => {
+            onScreen = entry.isIntersecting
+            if (onScreen && !breathing) flicker()
+          })
+          io.observe(el)
+          tl.call(() => { if (!breathing) flicker() })
         }
 
         if (fine) {
@@ -99,6 +112,8 @@ export function useFirelight(elRef, { ignite = false, rest = { x: 50, y: 46 }, r
         return () => {
           if (onMove) window.removeEventListener('pointermove', onMove)
           onMove = null
+          io?.disconnect()
+          io = null
         }
       },
       el,

@@ -138,7 +138,7 @@ const links = [
   .strip { grid-template-columns: auto 1fr auto auto; }
   .link { display: none; }
   .strip::after { grid-column: 2; }
-  .book { grid-column: 3; padding: 0 1rem; font-size: 1rem; }
+  .book { grid-column: 3; padding: 0 1rem; font-size: 1rem; white-space: nowrap; }
   .menu {
     grid-column: 4;
     display: grid;
@@ -149,8 +149,13 @@ const links = [
     cursor: pointer;
   }
   .drop {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     display: grid;
     padding-top: 0;
+    box-shadow: 0 24px 40px rgb(0 0 0 / 0.6);
   }
   .drop[style*='none'] { display: none; }
   .drop-link {
@@ -163,5 +168,8 @@ const links = [
   .brand-name small { display: none; }
   .brand { padding-right: 0.7rem; }
   .brand-mark { width: 36px; height: 36px; }
+  .brand-name { font-size: 1.15rem; }
+  .book { padding: 0 0.8rem; font-size: 0.92rem; }
+  .menu { width: 48px; }
 }
 </style>

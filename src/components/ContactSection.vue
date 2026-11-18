@@ -183,6 +183,8 @@ textarea:user-invalid { border-color: var(--color-ember); }
 @media (max-width: 860px) {
   .grid { grid-template-columns: 1fr; }
   .info { padding-bottom: 2rem; }
+  .info ul { gap: 1.3rem; }
+  .info a, .info em { font-size: 1.05rem; overflow-wrap: normal; white-space: nowrap; }
   .vine, .vine2 { display: none; }
 }
 @media (max-width: 560px) {

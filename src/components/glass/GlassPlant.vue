@@ -134,4 +134,7 @@ const vb = computed(() => VB[props.kind])
   pointer-events: none;
   filter: drop-shadow(0 10px 18px rgb(0 0 0 / 0.45));
 }
+@media (max-width: 860px) {
+  .plant { filter: none; }
+}
 </style>

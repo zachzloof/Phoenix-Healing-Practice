@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { CONTACT } from '../content/site.js'
 import ChakraRule from './glass/ChakraRule.vue'
 import GlassPlant from './glass/GlassPlant.vue'
@@ -15,7 +15,9 @@ function init() {
   window.Calendly.initInlineWidget({ url: CONTACT.calendly, parentElement: embed.value })
 }
 
-onMounted(() => {
+// Load Calendly (a heavy third-party iframe) only as the visitor nears the
+// booking section, so phones don't pay for it on first paint.
+function load() {
   if (window.Calendly) return init()
   let s = document.querySelector('script[data-calendly]')
   if (!s) {
@@ -27,7 +29,22 @@ onMounted(() => {
   }
   s.addEventListener('load', init, { once: true })
   s.addEventListener('error', () => (failed.value = true), { once: true })
+}
+
+let io
+onMounted(() => {
+  if (!('IntersectionObserver' in window)) return load()
+  io = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) return
+      io.disconnect()
+      load()
+    },
+    { rootMargin: '900px 0px' },
+  )
+  io.observe(embed.value)
 })
+onBeforeUnmount(() => io?.disconnect())
 </script>
 
 <template>

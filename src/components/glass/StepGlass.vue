@@ -48,7 +48,7 @@ const g = computed(() => {
 </script>
 
 <template>
-  <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false" class="step-glass">
+  <svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" class="step-glass">
     <path v-for="(p, i) in g.panes" :key="'p' + i" :d="p.d" :fill="p.fill" />
     <g fill="none" :stroke="LEAD" stroke-width="4" stroke-linejoin="round">
       <path v-for="(p, i) in g.panes" :key="'l' + i" :d="p.d" />

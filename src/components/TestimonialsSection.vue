@@ -17,7 +17,7 @@ const tints = ['amber', 'rose', 'moss', 'sky']
         <h2 id="t-title">What clients say</h2>
       </header>
       <div class="rail" aria-hidden="true" />
-      <ul class="hangers">
+      <ul class="hangers" tabindex="0" aria-label="Client testimonials">
         <li v-for="(t, i) in TESTIMONIALS" :key="t.name" class="hanger" :class="tints[i % 4]" :data-placeholder="t.placeholder || undefined">
           <figure class="catcher">
             <ChakraJewel :chakra="[2, 0, 3, 4][i % 4]" :size="22" class="top" />
@@ -105,7 +105,23 @@ figcaption span { display: block; font-size: 0.92rem; }
   .hangers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
-  .hangers { grid-template-columns: 1fr; }
-  .hanger { --drop: 1.5rem !important; }
+  .hangers {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 84%;
+    gap: 0.9rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 8%;
+    padding: 0 8% 1.5rem;
+    margin-inline: calc(-1 * clamp(8px, 1.6vw, 22px));
+    scrollbar-width: none;
+  }
+  .hangers::-webkit-scrollbar { display: none; }
+  .hanger { scroll-snap-align: center; --drop: 1.75rem !important; }
+  .hanger:nth-child(even) { --drop: 2.75rem !important; }
+  .catcher { height: 100%; box-sizing: border-box; align-content: start; padding: 5.6rem 1.4rem 1.5rem; }
+  .hangers:focus-visible { outline-offset: -3px; }
 }
 </style>

@@ -125,4 +125,8 @@ const defaultLabel = {
 .rose[data-element='earth'] { --bloom: 240 196 120; }
 .rose[data-element='air'] { --bloom: 200 226 255; }
 .rose[data-element='fire'] { --bloom: 255 172 70; }
+/* phones: a round box-shadow looks the same as drop-shadow on a circle and costs far less */
+@media (max-width: 860px) {
+  .rose { filter: none; box-shadow: 0 14px 32px rgb(0 0 0 / 0.55); }
+}
 </style>
