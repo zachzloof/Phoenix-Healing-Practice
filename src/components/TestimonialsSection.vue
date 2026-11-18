@@ -1,82 +1,111 @@
 <script setup>
-const testimonials = [
-  {
-    quote: "I was suffering from chronic back pain for years. After just three sessions with Penny, the relief was remarkable. Her intuitive touch and healing presence made me feel completely safe and understood.",
-    name: "Sarah M.",
-    location: "Chelmsford",
-    service: "Myofascial Release",
-  },
-  {
-    quote: "The shamanic healing session with Penny was profound and transformative. I walked in feeling scattered and disconnected, and left feeling whole again. She is truly gifted.",
-    name: "James T.",
-    location: "Essex",
-    service: "Shamanic Healing",
-  },
-  {
-    quote: "Penny's myofascial release work is unlike anything I've experienced. Gentle, deep, and incredibly effective. My tension headaches have almost completely gone after four sessions.",
-    name: "Rachel H.",
-    location: "Braintree",
-    service: "Myofascial Release",
-  },
-  {
-    quote: "I came to Penny following a recommendation from my osteopath. The combination of bodywork and energetic healing she offers is extraordinary. I feel like a completely different person.",
-    name: "Louise K.",
-    location: "Chelmsford",
-    service: "Combined Session",
-  },
-]
+import { TESTIMONIALS } from '../content/site.js'
+import ChakraJewel from './glass/ChakraJewel.vue'
+import GlassPlant from './glass/GlassPlant.vue'
+
+// Each quote hangs from the rail like a suncatcher in a window.
+// NOTE: TESTIMONIALS are placeholders (see content/site.js) until real ones arrive.
+const tints = ['amber', 'rose', 'moss', 'sky']
 </script>
 
 <template>
-  <section id="testimonials" class="py-24 bg-brown relative overflow-hidden">
-    <!-- Soft glow background -->
-    <div class="absolute inset-0 pointer-events-none overflow-hidden">
-      <div class="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-gold/10 blur-3xl" />
-      <div class="absolute -bottom-20 -right-20 w-96 h-96 rounded-full bg-gold-light/10 blur-3xl" />
-    </div>
-
-    <div class="relative max-w-6xl mx-auto px-6">
-
-      <!-- Header -->
-      <div class="text-center mb-16">
-        <div class="flex items-center justify-center gap-3 mb-4">
-          <span class="block w-8 h-px bg-gold-light/50" />
-          <span class="text-gold-light/90 text-xs tracking-[0.4em] uppercase font-semibold font-body">Stories of Healing</span>
-          <span class="block w-8 h-px bg-gold-light/50" />
-        </div>
-        <h2 class="font-heading text-4xl md:text-5xl font-bold text-warm-white mb-4">What Clients Say</h2>
-        <div class="w-14 h-0.5 bg-gold mx-auto" />
-      </div>
-
-      <!-- Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
-        <div
-          v-for="t in testimonials"
-          :key="t.name"
-          class="bg-warm-white/6 border border-warm-white/12 backdrop-blur-sm rounded-2xl p-7 hover:bg-warm-white/10 transition-all duration-300"
-        >
-          <!-- Stars -->
-          <div class="flex gap-0.5 mb-4 text-gold text-lg">
-            <span v-for="n in 5" :key="n">★</span>
-          </div>
-
-          <!-- Quote -->
-          <p class="text-warm-white/80 font-body leading-relaxed italic mb-6 text-sm">
-            "{{ t.quote }}"
-          </p>
-
-          <!-- Attribution -->
-          <div class="flex items-center justify-between">
-            <div>
-              <div class="text-warm-white font-semibold text-sm">{{ t.name }}</div>
-              <div class="text-gold-light/65 text-xs mt-0.5">{{ t.location }}</div>
-            </div>
-            <span class="bg-gold/20 border border-gold/30 text-gold-light px-3 py-1 rounded-full text-xs font-semibold">
-              {{ t.service }}
-            </span>
-          </div>
-        </div>
-      </div>
+  <section id="testimonials" class="section" aria-labelledby="t-title">
+    <GlassPlant kind="fern" element="fire" :seed="81" class="margin-plant" style="left: 0; bottom: 0; height: 26rem" />
+    <GlassPlant kind="fern" element="fire" :seed="82" class="margin-plant" flip style="right: 0; bottom: 2rem; height: 20rem" />
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="t-title">What clients say</h2>
+      </header>
+      <div class="rail" aria-hidden="true" />
+      <ul class="hangers">
+        <li v-for="(t, i) in TESTIMONIALS" :key="t.name" class="hanger" :class="tints[i % 4]" :data-placeholder="t.placeholder || undefined">
+          <figure class="catcher">
+            <ChakraJewel :chakra="[2, 0, 3, 4][i % 4]" :size="22" class="top" />
+            <blockquote>“{{ t.quote }}”</blockquote>
+            <figcaption>
+              <strong>{{ t.name }}</strong>, {{ t.place }}
+              <span>{{ t.service }}</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
+
+<style scoped>
+.rail {
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(#4a3a30, #17110e 70%);
+  box-shadow: 0 6px 14px rgb(0 0 0 / 0.5);
+}
+.hangers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hanger {
+  position: relative;
+  padding-top: var(--drop, 2.5rem);
+}
+.hanger:nth-child(2) { --drop: 4.5rem; }
+.hanger:nth-child(3) { --drop: 1.5rem; }
+.hanger:nth-child(4) { --drop: 3.5rem; }
+/* the chain: little links from rail to pane */
+.hanger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: var(--drop, 2.5rem);
+  translate: -50% 0;
+  background: repeating-linear-gradient(#8a7a6a 0 5px, #2a201a 5px 8px);
+  border-radius: 2px;
+}
+.catcher {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 6.2rem 1.8rem 1.8rem;
+  border: 7px solid #17110e;
+  border-radius: 50% 50% 10px 10px / 5.5rem 5.5rem 10px 10px;
+  color: var(--color-ink);
+  background: var(--seeds), var(--tint);
+  box-shadow: 0 20px 40px rgb(0 0 0 / 0.45), inset 0 0 30px rgb(255 255 255 / 0.35);
+  transition: filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.catcher:hover { filter: brightness(1.08) saturate(1.1); }
+.top {
+  position: absolute;
+  top: 0.7rem;
+  left: 50%;
+  translate: -50% 0;
+}
+.amber { --tint: linear-gradient(170deg, #fdf0cf, #f6d38a); }
+.rose { --tint: linear-gradient(170deg, #fbe7df, #f0b9a6); }
+.moss { --tint: linear-gradient(170deg, #eef3dc, #c8d9a3); }
+.sky { --tint: linear-gradient(170deg, #eaf4f9, #b9d9ec); }
+blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.5;
+}
+figcaption { font-size: 1rem; color: var(--color-ink-soft); }
+figcaption strong { color: var(--color-ink); }
+figcaption span { display: block; font-size: 0.92rem; }
+
+@media (max-width: 1000px) {
+  .hangers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .hangers { grid-template-columns: 1fr; }
+  .hanger { --drop: 1.5rem !important; }
+}
+</style>

@@ -1,133 +1,140 @@
 <script setup>
-const mfrPoints = [
-  'Chronic pain & fibromyalgia',
-  'Sports injuries & recovery',
-  'Postural problems & stiffness',
-  'Stress-related tension',
-  'Headaches & migraines',
-]
+import RoseWindow from './glass/RoseWindow.vue'
+import ChakraJewel from './glass/ChakraJewel.vue'
+import GlassPlant from './glass/GlassPlant.vue'
+import { SERVICES, CONTACT } from '../content/site.js'
 
-const shamanicPoints = [
-  'Spiritual disconnection',
-  'Emotional trauma & grief',
-  'Life transitions & crossroads',
-  'Anxiety & low mood',
-  'Seeking deeper meaning',
-]
+const list = [SERVICES.mfr, SERVICES.shamanic]
 </script>
 
 <template>
-  <section id="services" class="py-24 bg-gold-pale">
-    <div class="max-w-6xl mx-auto px-6">
-
-      <!-- Header -->
-      <div class="text-center mb-16">
-        <div class="flex items-center justify-center gap-3 mb-4">
-          <span class="block w-8 h-px bg-gold" />
-          <span class="text-gold text-xs tracking-[0.4em] uppercase font-semibold font-body">What I Offer</span>
-          <span class="block w-8 h-px bg-gold" />
-        </div>
-        <h2 class="font-heading text-4xl md:text-5xl font-bold text-brown mb-4">My Services</h2>
-        <p class="text-earth/65 max-w-xl mx-auto font-body leading-relaxed">
-          Holistic healing that honours your whole self — body, mind, and spirit.
-          Every session is tailored to your unique needs.
+  <section id="services" class="section" aria-labelledby="services-title">
+    <GlassPlant kind="pothos" element="fire" :seed="71" class="margin-plant" style="left: 1%; top: 0; height: 30rem" />
+    <GlassPlant kind="pothos" element="fire" :seed="72" class="margin-plant" style="right: 1%; top: 0; height: 22rem" />
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="services-title">Two windows, one practice</h2>
+        <p>
+          Holistic healing that honours your whole self: body, mind, and spirit. Every session is
+          tailored to your unique needs.
         </p>
-        <div class="gold-divider mx-auto mt-6" />
-      </div>
+      </header>
 
-      <!-- Cards -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div class="pair">
+        <article v-for="(s, k) in list" :key="s.key" class="came service" :data-element="s.element">
+          <RouterLink :to="s.to" class="window-cell" :aria-label="`${s.name}: the ${s.elementName.toLowerCase()} window`">
+            <RoseWindow :element="s.element" :seed="k ? 31 : 17" />
+            <GlassPlant :kind="k ? 'pothos' : 'fern'" :element="s.element" :seed="k + 4" class="plant" :class="k ? 'hang' : 'rise'" />
+          </RouterLink>
 
-        <!-- MFR card -->
-        <div class="bg-warm-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group flex flex-col">
-          <div class="relative h-64 overflow-hidden flex-shrink-0">
-            <img
-              src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
-              alt="Myofascial Release therapy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-earth/65 to-transparent" />
-            <div class="absolute bottom-4 left-6">
-              <span class="bg-gold text-warm-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-md tracking-wide">
-                MFR · MER
-              </span>
-            </div>
+          <div class="pane-clear text">
+            <h3>{{ s.name }}</h3>
+            <p class="element">The {{ s.elementName.toLowerCase() }} window</p>
+            <p>{{ s.summary }}</p>
+            <ul>
+              <li v-for="(pt, i) in s.idealFor" :key="pt"><ChakraJewel :chakra="(k ? 2 : 0) + i" :size="16" />{{ pt }}</li>
+            </ul>
           </div>
-          <div class="p-8 flex flex-col flex-1">
-            <h3 class="font-heading text-2xl font-bold text-brown mb-3">Myofascial Release</h3>
-            <div class="gold-divider mb-5" />
-            <p class="text-earth/70 font-body leading-relaxed mb-6 text-sm">
-              A gentle, hands-on therapy targeting the fascia — the connective tissue that
-              surrounds every muscle, bone, nerve and organ. Through sustained, gentle pressure,
-              MFR releases restrictions, restoring freedom of movement and addressing the
-              root cause of pain rather than just the symptoms.
-            </p>
-            <div class="mb-6">
-              <h4 class="text-brown font-semibold text-xs uppercase tracking-wider mb-3">Ideal for:</h4>
-              <ul class="space-y-2">
-                <li v-for="pt in mfrPoints" :key="pt" class="flex items-center gap-2.5 text-earth/70 text-sm font-body">
-                  <span class="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
-                  {{ pt }}
-                </li>
-              </ul>
-            </div>
-            <div class="mt-auto pt-5 border-t border-cream-dark flex items-center justify-between">
-              <span class="font-heading text-2xl font-bold text-gold">
-                £60 <span class="text-earth/40 text-sm font-body font-normal">/ session</span>
-              </span>
-              <a href="#booking" class="bg-gold hover:bg-brown text-warm-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
-                Book Now
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- Shamanic card -->
-        <div class="bg-warm-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group flex flex-col">
-          <div class="relative h-64 overflow-hidden flex-shrink-0">
-            <img
-              src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?w=800&q=80"
-              alt="Shamanic healing"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-earth/65 to-transparent" />
-            <div class="absolute bottom-4 left-6">
-              <span class="bg-sage text-warm-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-md tracking-wide">
-                Shamanic
-              </span>
-            </div>
+          <div class="foot">
+            <p class="pane-dim price"><span>{{ CONTACT.price }}</span> per session</p>
+            <RouterLink :to="s.to" class="pane-dim btn-glass go">
+              Explore {{ s.name }}
+              <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4 10h11m-4-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </RouterLink>
           </div>
-          <div class="p-8 flex flex-col flex-1">
-            <h3 class="font-heading text-2xl font-bold text-brown mb-3">Shamanic Healing</h3>
-            <div class="gold-divider mb-5" />
-            <p class="text-earth/70 font-body leading-relaxed mb-6 text-sm">
-              Drawing on humanity's oldest healing traditions, shamanic healing recognises
-              that illness often has a spiritual dimension alongside the physical. Using
-              rhythmic sound, sacred practices, and deep intuitive guidance, this work
-              restores balance and wholeness — reconnecting you to your inner wisdom and
-              the healing power of the natural world.
-            </p>
-            <div class="mb-6">
-              <h4 class="text-brown font-semibold text-xs uppercase tracking-wider mb-3">Ideal for:</h4>
-              <ul class="space-y-2">
-                <li v-for="pt in shamanicPoints" :key="pt" class="flex items-center gap-2.5 text-earth/70 text-sm font-body">
-                  <span class="w-1.5 h-1.5 rounded-full bg-sage flex-shrink-0" />
-                  {{ pt }}
-                </li>
-              </ul>
-            </div>
-            <div class="mt-auto pt-5 border-t border-cream-dark flex items-center justify-between">
-              <span class="font-heading text-2xl font-bold text-gold">
-                £60 <span class="text-earth/40 text-sm font-body font-normal">/ session</span>
-              </span>
-              <a href="#booking" class="bg-sage hover:bg-sage/80 text-warm-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
-                Book Now
-              </a>
-            </div>
-          </div>
-        </div>
-
+        </article>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+}
+.pair > :last-child { margin-top: clamp(0rem, 6vw, 5rem); }
+
+.service {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.window-cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(62deg, #17110e 0 3px, transparent 3px 56px),
+    repeating-linear-gradient(-62deg, #17110e 0 3px, transparent 3px 56px),
+    var(--seeds),
+    radial-gradient(70% 60% at 50% 45%, #5a4416, #1d1609 75%);
+  transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service[data-element='air'] .window-cell {
+  background:
+    repeating-linear-gradient(62deg, #17110e 0 3px, transparent 3px 56px),
+    repeating-linear-gradient(-62deg, #17110e 0 3px, transparent 3px 56px),
+    var(--seeds),
+    radial-gradient(70% 60% at 50% 45%, #2c3f86, #111833 75%);
+}
+.window-cell > :first-child { width: min(100%, 26rem); }
+.window-cell:hover { filter: brightness(1.15) saturate(1.1); }
+.plant { position: absolute; z-index: 1; }
+.rise { right: -4%; bottom: -10%; height: 62%; }
+.hang { left: 2%; top: -6%; height: 78%; }
+
+.text {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  padding: clamp(1.6rem, 3.5vw, 2.6rem);
+}
+h3 {
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  color: #5c3820;
+}
+.service[data-element='air'] h3 { color: #25336b; }
+.element {
+  margin-top: -0.4rem;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-ink-soft);
+}
+.text p { color: var(--color-ink-soft); }
+ul { display: grid; gap: 0.45rem; margin: 0.3rem 0 0; padding: 0; list-style: none; }
+li { display: flex; align-items: center; gap: 0.65rem; color: var(--color-ink); }
+
+.foot {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--came);
+}
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 1rem 1.3rem;
+  color: var(--text-on-room-soft);
+}
+.price span { font-family: var(--font-display); font-size: 1.6rem; color: var(--color-marigold); }
+.go {
+  justify-content: space-between;
+  padding: 1rem 1.3rem;
+  font-size: 1.15rem;
+  color: var(--text-on-room);
+}
+.go:hover { filter: brightness(1.5); }
+
+@media (max-width: 900px) {
+  .pair { grid-template-columns: 1fr; }
+  .pair > :last-child { margin-top: 0; }
+}
+@media (max-width: 460px) {
+  .foot { grid-template-columns: 1fr; }
+}
+</style>

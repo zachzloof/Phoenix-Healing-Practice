@@ -1,78 +1,127 @@
+<script setup>
+import GlassPlant from './glass/GlassPlant.vue'
+import ChakraJewel from './glass/ChakraJewel.vue'
+
+const roles = [
+  { label: 'Certified MFR Practitioner', chakra: 3 },
+  { label: 'Shamanic Healer', chakra: 5 },
+  { label: 'Chelmsford, Essex', chakra: 0 },
+]
+</script>
+
 <template>
-  <section id="about" class="py-24 bg-cream">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-        <!-- Image column -->
-        <div class="relative">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=700&q=80"
-              alt="Penny Theophanous – Healer"
-              class="w-full h-[520px] object-cover object-top"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-brown/40 via-transparent to-transparent" />
-          </div>
-          <!-- Offset frame -->
-          <div class="absolute -bottom-5 -right-5 w-full h-full border-2 border-gold/35 rounded-2xl -z-10 pointer-events-none" />
-          <!-- Floating badge -->
-          <div class="absolute -bottom-7 -left-5 bg-cream shadow-xl border border-cream-dark rounded-2xl px-6 py-4">
-            <div class="text-center">
-              <div class="font-heading text-3xl font-bold text-gold">10+</div>
-              <div class="text-brown-light text-xs font-semibold tracking-wide uppercase mt-0.5">Years Experience</div>
-            </div>
-          </div>
+  <section id="about" class="section" aria-labelledby="about-title">
+    <div class="wrap came about">
+      <!--
+        Portrait window. When Penny's own photo arrives, place it inside .portrait
+        as an <img> (object-fit: cover) and keep the leaded arch around it.
+      -->
+      <div class="portrait" aria-hidden="true">
+        <div class="arch">
+          <GlassPlant kind="pothos" element="fire" :seed="21" class="pothos" />
+          <GlassPlant kind="monstera" element="fire" :seed="9" class="mon" />
+          <GlassPlant kind="fern" element="fire" :seed="14" class="fern" flip />
         </div>
+      </div>
 
-        <!-- Text column -->
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-gold text-xs tracking-[0.4em] uppercase font-semibold">About</span>
-            <span class="block w-8 h-px bg-gold" />
-          </div>
-
-          <h2 class="font-heading text-4xl md:text-5xl font-bold text-brown leading-tight mb-6">
-            Meet Penny<br />
-            <em class="text-gold not-italic">Theophanous</em>
-          </h2>
-
-          <div class="gold-divider mb-8" />
-
-          <div class="space-y-4 text-earth/75 leading-relaxed font-body text-base">
-            <p>
-              My name is Penny Theophanous, and I am a certified practitioner in Myofascial
-              Release and Shamanic Healing, based in the heart of Chelmsford, Essex.
-            </p>
-            <p>
-              My journey into healing began through my own experience of chronic pain and
-              disconnection. Through the transformative power of myofascial release and
-              shamanic practice, I found not just relief — but a profound reconnection with
-              my body, mind, and spirit.
-            </p>
-            <p>
-              I believe true healing works on every level. Whether you come to me with physical
-              tension, emotional blocks, or a sense of feeling lost, my approach is always
-              gentle, intuitive, and deeply respectful of your individual journey.
-            </p>
-            <p class="font-heading text-brown italic text-lg leading-snug">
-              "Each session is a sacred space where you are truly seen, heard, and held."
-            </p>
-          </div>
-
-          <!-- Credential pills -->
-          <div class="mt-8 flex flex-wrap gap-3">
-            <span class="bg-gold-pale border border-gold/30 text-brown px-4 py-2 rounded-full text-sm font-semibold">
-              Certified MFR Practitioner
-            </span>
-            <span class="bg-sage-light/25 border border-sage/30 text-sage px-4 py-2 rounded-full text-sm font-semibold">
-              Shamanic Healer
-            </span>
-            <span class="bg-gold-pale border border-gold/30 text-brown px-4 py-2 rounded-full text-sm font-semibold">
-              Chelmsford, Essex
-            </span>
-          </div>
-        </div>
+      <div class="pane-clear words">
+        <h2 id="about-title">Meet Penny Theophanous</h2>
+        <p>
+          My name is Penny Theophanous, and I am a certified practitioner in Myofascial Release and
+          Shamanic Healing, based in the heart of Chelmsford, Essex.
+        </p>
+        <p>
+          My journey into healing began through my own experience of chronic pain and disconnection.
+          Through the transformative power of myofascial release and shamanic practice, I found not
+          just relief, but a profound reconnection with my body, mind, and spirit.
+        </p>
+        <p>
+          I believe true healing works on every level. Whether you come to me with physical tension,
+          emotional blocks, or a sense of feeling lost, my approach is always gentle, intuitive, and
+          deeply respectful of your individual journey.
+        </p>
+        <blockquote>
+          “Each session is a sacred space where you are truly seen, heard, and held.”
+        </blockquote>
+        <ul class="roles">
+          <li v-for="r in roles" :key="r.label"><ChakraJewel :chakra="r.chakra" :size="18" />{{ r.label }}</li>
+        </ul>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+.portrait {
+  position: relative;
+  min-height: 34rem;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  background:
+    repeating-linear-gradient(90deg, #17110e 0 3px, transparent 3px 72px),
+    repeating-linear-gradient(0deg, #17110e 0 3px, transparent 3px 72px),
+    var(--seeds),
+    linear-gradient(170deg, #4a1d0f, #2a120a);
+}
+.arch {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border: 8px solid #17110e;
+  border-radius: 999px 999px 0 0;
+  background:
+    var(--seeds),
+    radial-gradient(90% 60% at 50% 30%, #fbe39a, #f0912a 45%, #b8341b 100%);
+  box-shadow: inset 0 0 60px rgb(90 20 0 / 0.5), 0 0 60px rgb(240 145 42 / 0.25);
+}
+.pothos { position: absolute; top: -2%; left: 4%; height: 82%; }
+.mon { position: absolute; bottom: -6%; right: -10%; width: 78%; transform: rotate(10deg); }
+.fern { position: absolute; bottom: -4%; left: -12%; height: 70%; }
+
+.words {
+  display: grid;
+  align-content: center;
+  gap: 1.15rem;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  font-size: 1.15rem;
+}
+.words h2 {
+  font-size: clamp(2.3rem, 4.4vw, 3.6rem);
+  color: var(--color-ruby);
+  margin-bottom: 0.4rem;
+}
+.words p { max-width: 62ch; color: var(--color-ink-soft); }
+blockquote {
+  margin: 0.6rem 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  line-height: 1.25;
+  color: var(--color-ember);
+}
+.roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.roles li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.9rem 0.45rem 0.55rem;
+  border: 3px solid #17110e;
+  background: rgb(255 255 255 / 0.4);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+@media (max-width: 860px) {
+  .about { grid-template-columns: 1fr; }
+  .portrait { min-height: 24rem; }
+}
+</style>

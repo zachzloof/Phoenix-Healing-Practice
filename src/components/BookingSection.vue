@@ -1,49 +1,92 @@
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
+import { CONTACT } from '../content/site.js'
+import ChakraRule from './glass/ChakraRule.vue'
+import GlassPlant from './glass/GlassPlant.vue'
+
+// Calendly's widget.js only auto-initialises on first load, so we always
+// initialise our own embed; that keeps it working after route changes too.
+const embed = ref(null)
+const failed = ref(false)
+
+function init() {
+  if (!embed.value || !window.Calendly) return
+  embed.value.innerHTML = ''
+  window.Calendly.initInlineWidget({ url: CONTACT.calendly, parentElement: embed.value })
+}
 
 onMounted(() => {
-  if (!document.querySelector('script[src*="calendly"]')) {
-    const s = document.createElement('script')
+  if (window.Calendly) return init()
+  let s = document.querySelector('script[data-calendly]')
+  if (!s) {
+    s = document.createElement('script')
     s.src = 'https://assets.calendly.com/assets/external/widget.js'
     s.async = true
+    s.dataset.calendly = ''
     document.head.appendChild(s)
   }
+  s.addEventListener('load', init, { once: true })
+  s.addEventListener('error', () => (failed.value = true), { once: true })
 })
 </script>
 
 <template>
-  <section id="booking" class="py-24 bg-gold-pale">
-    <div class="max-w-4xl mx-auto px-6">
-
-      <!-- Header -->
-      <div class="text-center mb-12">
-        <div class="flex items-center justify-center gap-3 mb-4">
-          <span class="block w-8 h-px bg-gold" />
-          <span class="text-gold text-xs tracking-[0.4em] uppercase font-semibold font-body">Ready to Begin?</span>
-          <span class="block w-8 h-px bg-gold" />
-        </div>
-        <h2 class="font-heading text-4xl md:text-5xl font-bold text-brown mb-4">Book Your Session</h2>
-        <p class="text-earth/65 max-w-md mx-auto font-body leading-relaxed">
-          Select a time that suits you. Sessions are
-          <span class="text-gold font-semibold">£60</span> and take place in
-          Chelmsford, Essex.
+  <section id="booking" class="section" aria-labelledby="booking-title">
+    <GlassPlant kind="pothos" element="fire" :seed="95" class="margin-plant" style="left: 2%; top: 0; height: 28rem" />
+    <GlassPlant kind="fern" element="fire" :seed="96" class="margin-plant" flip style="right: 1%; bottom: 2rem; height: 22rem" />
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="booking-title">Book a session</h2>
+        <p>
+          Choose a time that suits you. Sessions are <strong>{{ CONTACT.price }}</strong> and take
+          place in {{ CONTACT.location }}.
         </p>
-        <div class="gold-divider mx-auto mt-6" />
-      </div>
+        <ChakraRule />
+      </header>
 
-      <!-- Calendly widget -->
-      <div class="bg-warm-white rounded-3xl shadow-xl overflow-hidden border border-cream-dark">
-        <div
-          class="calendly-inline-widget"
-          data-url="https://calendly.com/penny-theophanous"
-          style="min-width: 320px; height: 700px;"
-        />
+      <div class="came frame">
+        <div class="pane-clear cal">
+          <div ref="embed" class="embed" />
+          <p v-if="failed" class="fallback">
+            The booking calendar couldn't load. Please
+            <a :href="`mailto:${CONTACT.email}`">email Penny</a> or call
+            <a :href="CONTACT.phoneHref">{{ CONTACT.phone }}</a> to book.
+          </p>
+        </div>
       </div>
-
-      <p class="text-center text-earth/45 text-sm mt-6 font-body">
-        Prefer to reach out directly?
-        <a href="#contact" class="text-gold hover:text-brown underline transition-colors">Contact Penny here.</a>
+      <p class="aside">
+        Calendar not showing?
+        <a :href="CONTACT.calendly" target="_blank" rel="noopener">Open Penny's booking page</a>.
+        Prefer to talk first?
+        <RouterLink to="/#contact">Send Penny a message</RouterLink>.
       </p>
     </div>
   </section>
 </template>
+
+<style scoped>
+.section-head strong { color: var(--color-marigold); font-weight: 700; }
+.frame {
+  max-width: 64rem;
+  margin-inline: auto;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.04), 0 0 90px rgb(240 145 42 / 0.28), 0 30px 60px -20px rgb(0 0 0 / 0.7);
+}
+.cal { min-height: 700px; }
+.embed { min-width: 320px; height: 700px; }
+.fallback { padding: 2rem; font-size: 1.15rem; }
+.fallback a { color: var(--color-ember); font-weight: 700; }
+.aside {
+  margin-top: 1.6rem;
+  padding-inline: 16px;
+  text-align: center;
+  color: var(--text-on-room-soft);
+}
+.aside a {
+  color: var(--color-marigold);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+}
+@media (max-width: 1100px) {
+  .margin-plant { display: none !important; }
+}
+</style>

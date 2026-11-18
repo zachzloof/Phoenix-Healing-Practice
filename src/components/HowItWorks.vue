@@ -1,68 +1,95 @@
 <script setup>
-const steps = [
-  {
-    number: '01',
-    title: 'Book Your Session',
-    description: 'Choose a time that works for you through our simple online booking system. Sessions take place in Chelmsford, Essex.',
-  },
-  {
-    number: '02',
-    title: 'Your First Conversation',
-    description: 'We begin with a gentle conversation about what brings you here, your health history, and what you hope to experience.',
-  },
-  {
-    number: '03',
-    title: 'The Session',
-    description: 'You remain fully clothed throughout. Penny works with sensitivity and presence, listening to your body\'s own wisdom.',
-  },
-  {
-    number: '04',
-    title: 'Integration & Aftercare',
-    description: 'After your session we discuss what arose and how to support your ongoing healing journey. You are never alone in this process.',
-  },
-]
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import StepGlass from './glass/StepGlass.vue'
+import GlassPlant from './glass/GlassPlant.vue'
+import { STEPS } from '../content/site.js'
+
+gsap.registerPlugin(ScrollTrigger)
+
+defineProps({
+  element: { type: String, default: 'fire' },
+  title: { type: String, default: 'How a session unfolds' },
+  lede: { type: String, default: 'Your healing journey begins with a single, courageous step.' },
+})
+
+// The four steps are panes that light one after another as you reach them.
+const root = ref(null)
+let mm
+onMounted(() => {
+  mm = gsap.matchMedia()
+  mm.add('(prefers-reduced-motion: no-preference)', () => {
+    const panes = gsap.utils.toArray('.step', root.value)
+    gsap.set(panes, { '--lit': 0 })
+    ScrollTrigger.create({
+      trigger: root.value,
+      start: 'top 70%',
+      once: true,
+      onEnter: () => gsap.to(panes, { '--lit': 1, duration: 1.4, ease: 'expo.out', stagger: 0.45 }),
+    })
+  }, root.value)
+})
+onBeforeUnmount(() => mm?.revert())
 </script>
 
 <template>
-  <section id="how-it-works" class="py-24 bg-cream">
-    <div class="max-w-6xl mx-auto px-6">
-
-      <!-- Header -->
-      <div class="text-center mb-16">
-        <div class="flex items-center justify-center gap-3 mb-4">
-          <span class="block w-8 h-px bg-gold" />
-          <span class="text-gold text-xs tracking-[0.4em] uppercase font-semibold font-body">The Process</span>
-          <span class="block w-8 h-px bg-gold" />
-        </div>
-        <h2 class="font-heading text-4xl md:text-5xl font-bold text-brown mb-4">How It Works</h2>
-        <p class="text-earth/65 max-w-sm mx-auto font-body">Your healing journey begins with a single, courageous step.</p>
-        <div class="gold-divider mx-auto mt-6" />
-      </div>
-
-      <!-- Steps grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div
-          v-for="(step, i) in steps"
-          :key="step.number"
-          class="relative flex flex-col items-center text-center group"
-        >
-          <!-- Connector (desktop only, not on last) -->
-          <div
-            v-if="i < steps.length - 1"
-            class="hidden lg:block absolute top-10 left-1/2 w-full h-px bg-gold/20 -z-10"
-          />
-
-          <!-- Circle -->
-          <div class="w-20 h-20 rounded-full bg-gold-pale border-2 border-gold/40 flex items-center justify-center mb-6 group-hover:bg-gold group-hover:border-gold transition-all duration-300 flex-shrink-0">
-            <span class="font-heading text-2xl font-bold text-gold group-hover:text-warm-white transition-colors duration-300">
-              {{ step.number }}
-            </span>
+  <section id="process" ref="root" class="section" aria-labelledby="process-title">
+    <GlassPlant kind="monstera" :element="element" :seed="91" class="margin-plant" style="left: -2rem; bottom: 1rem; height: 18rem" />
+    <GlassPlant kind="pothos" :element="element" :seed="92" class="margin-plant" style="right: 1%; top: 0; height: 24rem" />
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="process-title">{{ title }}</h2>
+        <p>{{ lede }}</p>
+      </header>
+      <ol class="came steps">
+        <li v-for="(s, i) in STEPS" :key="s.title" class="step">
+          <div class="glass"><StepGlass :stage="i" :element="element" /></div>
+          <div class="pane-clear copy">
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.text }}</p>
           </div>
-
-          <h3 class="font-heading text-xl font-semibold text-brown mb-3">{{ step.title }}</h3>
-          <p class="text-earth/60 text-sm font-body leading-relaxed">{{ step.description }}</p>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   </section>
 </template>
+
+<style scoped>
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  list-style: none;
+}
+.step {
+  --lit: 1;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--came);
+}
+.glass {
+  aspect-ratio: 1;
+  filter: brightness(calc(0.45 + var(--lit) * 0.6)) saturate(calc(0.6 + var(--lit) * 0.5));
+}
+.copy {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  padding: 1.4rem 1.3rem 1.6rem;
+  opacity: calc(0.55 + var(--lit) * 0.45);
+}
+h3 { font-size: 1.45rem; color: var(--color-ruby); }
+[data-element='earth'] h3 { color: #5c3820; }
+[data-element='air'] h3 { color: #25336b; }
+.copy p { font-size: 1.05rem; color: var(--color-ink-soft); }
+
+@media (max-width: 980px) {
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+  .step { grid-template-columns: 7rem 1fr; grid-template-rows: none; }
+  .glass { aspect-ratio: auto; }
+  .steps { grid-template-columns: 1fr; }
+}
+</style>

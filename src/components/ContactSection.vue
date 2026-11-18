@@ -1,181 +1,192 @@
 <script setup>
 import { ref } from 'vue'
+import { CONTACT } from '../content/site.js'
+import GlassPlant from './glass/GlassPlant.vue'
 
 const form = ref({ name: '', email: '', phone: '', service: '', message: '' })
 const submitted = ref(false)
 const submitting = ref(false)
 
+// TODO: connect to a real form service (Formspree, EmailJS…) before launch.
+// Until then this only simulates sending.
 async function handleSubmit() {
   submitting.value = true
-  await new Promise(r => setTimeout(r, 900))
+  await new Promise((r) => setTimeout(r, 900))
   submitting.value = false
   submitted.value = true
 }
 </script>
 
 <template>
-  <section id="contact" class="py-24 bg-cream">
-    <div class="max-w-6xl mx-auto px-6">
+  <section id="contact" class="section" aria-labelledby="contact-title">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="contact-title">Contact Penny</h2>
+        <p>Have a question before booking? I'd love to hear from you. No question is too small.</p>
+      </header>
 
-      <!-- Header -->
-      <div class="text-center mb-16">
-        <div class="flex items-center justify-center gap-3 mb-4">
-          <span class="block w-8 h-px bg-gold" />
-          <span class="text-gold text-xs tracking-[0.4em] uppercase font-semibold font-body">Get in Touch</span>
-          <span class="block w-8 h-px bg-gold" />
-        </div>
-        <h2 class="font-heading text-4xl md:text-5xl font-bold text-brown mb-4">Contact Penny</h2>
-        <p class="text-earth/65 max-w-md mx-auto font-body">
-          Have a question before booking? I'd love to hear from you.
-        </p>
-        <div class="gold-divider mx-auto mt-6" />
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
-
-        <!-- Contact info -->
-        <div class="lg:col-span-2">
-          <h3 class="font-heading text-2xl font-semibold text-brown mb-5">Let's Connect</h3>
-          <p class="text-earth/65 font-body leading-relaxed mb-8 text-sm">
-            Whether you have questions about a therapy, want to discuss your needs, or simply
-            want to know if we're the right fit — please reach out. No question is too small.
-          </p>
-
-          <div class="space-y-6">
-            <!-- Email -->
-            <a href="mailto:penny@patch-a-mumma.co.uk" class="flex items-start gap-4 group">
-              <div class="w-11 h-11 rounded-full bg-gold-pale border border-gold/30 flex items-center justify-center flex-shrink-0 group-hover:bg-gold transition-colors duration-300">
-                <svg class="w-5 h-5 text-gold group-hover:text-warm-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="text-brown font-semibold text-sm mb-0.5">Email</div>
-                <div class="text-earth/65 font-body text-sm group-hover:text-gold transition-colors break-all">
-                  penny@patch-a-mumma.co.uk
-                </div>
-              </div>
-            </a>
-
-            <!-- Phone -->
-            <a href="tel:07561702154" class="flex items-start gap-4 group">
-              <div class="w-11 h-11 rounded-full bg-gold-pale border border-gold/30 flex items-center justify-center flex-shrink-0 group-hover:bg-gold transition-colors duration-300">
-                <svg class="w-5 h-5 text-gold group-hover:text-warm-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="text-brown font-semibold text-sm mb-0.5">Phone</div>
-                <div class="text-earth/65 font-body text-sm group-hover:text-gold transition-colors">07561 702 154</div>
-              </div>
-            </a>
-
-            <!-- Location -->
-            <div class="flex items-start gap-4">
-              <div class="w-11 h-11 rounded-full bg-gold-pale border border-gold/30 flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="text-brown font-semibold text-sm mb-0.5">Location</div>
-                <div class="text-earth/65 font-body text-sm">Chelmsford, Essex</div>
-              </div>
-            </div>
-          </div>
+      <div class="came grid">
+        <div class="pane-dim info">
+          <GlassPlant kind="monstera" element="fire" :seed="33" class="vine" />
+          <GlassPlant kind="fern" element="fire" :seed="35" class="vine2" flip />
+          <ul>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l7.9 5.3a2 2 0 002.2 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              <span>Email<a :href="`mailto:${CONTACT.email}`">{{ CONTACT.email }}</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 012-2h3.3a1 1 0 01.9.7l1.5 4.5a1 1 0 01-.5 1.2l-2.3 1.1a11 11 0 005.5 5.5l1.1-2.3a1 1 0 011.2-.5l4.5 1.5a1 1 0 01.7.9V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z" /></svg>
+              <span>Phone<a :href="CONTACT.phoneHref">{{ CONTACT.phone }}</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.7 16.7l-4.3 4.2a2 2 0 01-2.8 0l-4.3-4.2a8 8 0 1111.4 0z" /><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              <span>Location<em>{{ CONTACT.location }}</em></span>
+            </li>
+          </ul>
         </div>
 
-        <!-- Form -->
-        <div class="lg:col-span-3">
-          <div class="bg-warm-white rounded-3xl p-8 shadow-lg border border-cream-dark">
-
-            <!-- Success state -->
-            <div v-if="submitted" class="text-center py-10">
-              <div class="w-16 h-16 bg-sage-light/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                </svg>
-              </div>
-              <h3 class="font-heading text-2xl font-semibold text-brown mb-2">Message Sent!</h3>
-              <p class="text-earth/65 font-body text-sm">Thank you for reaching out. Penny will be in touch with you very soon.</p>
-            </div>
-
-            <!-- Form -->
-            <form v-else @submit.prevent="handleSubmit" class="space-y-5">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label class="block text-brown font-semibold text-sm mb-1.5">Your Name *</label>
-                  <input
-                    v-model="form.name"
-                    type="text"
-                    required
-                    placeholder="Jane Smith"
-                    class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 text-earth placeholder-earth/30 text-sm font-body focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
-                  />
-                </div>
-                <div>
-                  <label class="block text-brown font-semibold text-sm mb-1.5">Email Address *</label>
-                  <input
-                    v-model="form.email"
-                    type="email"
-                    required
-                    placeholder="jane@example.com"
-                    class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 text-earth placeholder-earth/30 text-sm font-body focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
-                  />
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label class="block text-brown font-semibold text-sm mb-1.5">Phone Number</label>
-                  <input
-                    v-model="form.phone"
-                    type="tel"
-                    placeholder="07xxx xxx xxx"
-                    class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 text-earth placeholder-earth/30 text-sm font-body focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
-                  />
-                </div>
-                <div>
-                  <label class="block text-brown font-semibold text-sm mb-1.5">Interested In</label>
-                  <select
-                    v-model="form.service"
-                    class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 text-earth text-sm font-body focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
-                  >
-                    <option value="" disabled>Select a service…</option>
-                    <option value="mfr">Myofascial Release</option>
-                    <option value="shamanic">Shamanic Healing</option>
-                    <option value="both">Both / Not Sure</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-brown font-semibold text-sm mb-1.5">Your Message *</label>
-                <textarea
-                  v-model="form.message"
-                  required
-                  rows="4"
-                  placeholder="Tell me a little about what brings you here…"
-                  class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 text-earth placeholder-earth/30 text-sm font-body focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all resize-none"
-                />
-              </div>
-
-              <button
-                type="submit"
-                :disabled="submitting"
-                class="w-full bg-gold hover:bg-brown text-warm-white py-4 rounded-xl font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                {{ submitting ? 'Sending…' : 'Send Message' }}
-              </button>
-
-              <p class="text-earth/35 text-xs text-center font-body">
-                By submitting you agree to Penny contacting you about your enquiry.
-              </p>
-            </form>
+        <div class="pane-clear form-pane">
+          <div v-if="submitted" class="sent" role="status">
+            <h3>Message sent</h3>
+            <p>Thank you for reaching out. Penny will be in touch with you very soon.</p>
           </div>
+
+          <form v-else @submit.prevent="handleSubmit">
+            <div class="row">
+              <label>Your name
+                <input v-model="form.name" type="text" name="name" autocomplete="name" required />
+              </label>
+              <label>Email address
+                <input v-model="form.email" type="email" name="email" autocomplete="email" required />
+              </label>
+            </div>
+            <div class="row">
+              <label>Phone <small>(optional)</small>
+                <input v-model="form.phone" type="tel" name="phone" autocomplete="tel" />
+              </label>
+              <label>Interested in
+                <select v-model="form.service" name="service">
+                  <option value="">Not sure yet</option>
+                  <option value="mfr">Myofascial Release</option>
+                  <option value="shamanic">Shamanic Healing</option>
+                  <option value="both">Both</option>
+                </select>
+              </label>
+            </div>
+            <label>Your message
+              <textarea v-model="form.message" name="message" rows="5" required placeholder="Tell me a little about what brings you here…" />
+            </label>
+            <button type="submit" class="pane-amber btn-glass send" :disabled="submitting">
+              {{ submitting ? 'Sending…' : 'Send message' }}
+            </button>
+            <p class="consent">By sending this you agree to Penny contacting you about your enquiry.</p>
+          </form>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+}
+.info {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 4vw, 3rem);
+  padding-bottom: 14rem;
+}
+.vine { position: absolute; right: -8%; bottom: -12%; width: 62%; transform: rotate(-8deg); }
+.vine2 { position: absolute; left: -6%; bottom: -8%; height: 13rem; }
+.info ul { display: grid; gap: 1.8rem; margin: 0; padding: 0; list-style: none; }
+.info li { display: flex; gap: 1rem; align-items: flex-start; }
+.info svg {
+  flex: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.6rem;
+  border: 3px solid #17110e;
+  border-radius: 50%;
+  background: var(--seeds), radial-gradient(circle at 35% 30%, #5a2c16, #2a140b 70%);
+  box-shadow: 0 0 0 1px rgb(246 193 67 / 0.25);
+  fill: none;
+  stroke: var(--color-marigold);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.info span {
+  display: grid;
+  font-size: 0.95rem;
+  color: var(--text-on-room-soft);
+}
+.info a,
+.info em {
+  font-style: normal;
+  font-size: 1.2rem;
+  color: var(--text-on-room);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.info a:hover { color: var(--color-marigold); text-decoration: underline; text-underline-offset: 0.2em; }
+
+.form-pane { padding: clamp(1.6rem, 4vw, 3rem); }
+form { display: grid; gap: 1.2rem; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-ink);
+}
+label small { font-weight: 400; color: var(--color-ink-soft); }
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem 0.9rem;
+  font: inherit;
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--color-ink);
+  background: rgb(255 252 244 / 0.85);
+  border: 3px solid #17110e;
+  border-radius: 2px;
+  transition: box-shadow 0.4s, background-color 0.4s;
+}
+textarea { resize: vertical; min-height: 8rem; }
+::placeholder { color: #8a6e58; }
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  background: #fffaf0;
+  box-shadow: 0 0 0 4px var(--color-amber), 0 0 24px rgb(240 145 42 / 0.5);
+}
+input:user-invalid,
+textarea:user-invalid { border-color: var(--color-ember); }
+.send {
+  justify-self: start;
+  min-width: 14rem;
+  padding: 1.05rem 1.8rem;
+  border: 4px solid #17110e;
+}
+.send:disabled { filter: grayscale(0.5) brightness(0.9); cursor: progress; }
+.consent { font-size: 0.95rem; color: var(--color-ink-soft); }
+.sent { display: grid; gap: 0.8rem; padding: 3rem 0; text-align: center; }
+.sent h3 { font-size: 2rem; color: var(--color-ruby); }
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr; }
+  .info { padding-bottom: 2rem; }
+  .vine, .vine2 { display: none; }
+}
+@media (max-width: 560px) {
+  .row { grid-template-columns: 1fr; }
+  .send { justify-self: stretch; }
+}
+</style>

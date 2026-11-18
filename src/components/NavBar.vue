@@ -1,105 +1,167 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import PhoenixMark from './glass/PhoenixMark.vue'
 
-const scrolled = ref(false)
-const mobileOpen = ref(false)
+const route = useRoute()
+const open = ref(false)
+watch(() => route.fullPath, () => (open.value = false))
 
 const links = [
-  { label: 'Home',        href: '#home' },
-  { label: 'About',       href: '#about' },
-  { label: 'Services',    href: '#services' },
-  { label: 'How It Works',href: '#how-it-works' },
-  { label: 'Book',        href: '#booking' },
-  { label: 'Contact',     href: '#contact' },
+  { label: 'About Penny', to: '/#about' },
+  { label: 'Myofascial Release', to: '/myofascial-release', name: 'mfr' },
+  { label: 'Shamanic Healing', to: '/shamanic-healing', name: 'shamanic' },
+  { label: 'How it works', to: '/#process' },
+  { label: 'Contact', to: '/#contact' },
 ]
-
-function onScroll() { scrolled.value = window.scrollY > 60 }
-function close() { mobileOpen.value = false }
-
-onMounted(() => window.addEventListener('scroll', onScroll))
-onUnmounted(() => window.removeEventListener('scroll', onScroll))
 </script>
 
 <template>
-  <nav
-    :class="[
-      'fixed top-0 inset-x-0 z-50 transition-all duration-500',
-      scrolled ? 'bg-cream shadow-lg py-3' : 'bg-transparent py-5',
-    ]"
-  >
-    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#home" class="flex items-center gap-3" @click="close">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48" fill="currentColor"
-          :class="['w-9 h-9 transition-colors', scrolled ? 'text-gold' : 'text-gold-light']">
-          <path d="M18 2C18 2 8 14 8 24C8 30 11 35 14 40C14 34 18 30 18 24C18 30 22 34 22 40C25 35 28 30 28 24C28 14 18 2 18 2Z" opacity="0.35"/>
-          <path d="M18 8C18 8 11 18 11 26C11 31 13 35 16 42C16 36 18 32 18 26C18 32 20 36 20 42C23 35 25 31 25 26C25 18 18 8 18 8Z" opacity="0.65"/>
-          <path d="M18 14C18 14 14 22 14 28C14 32 16 37 18 44C20 37 22 32 22 28C22 22 18 14 18 14Z"/>
-          <path d="M13 22C10 18 4 20 2 16C7 14 13 17 18 14" opacity="0.55"/>
-          <path d="M23 22C26 18 32 20 34 16C29 14 23 17 18 14" opacity="0.55"/>
-        </svg>
-        <div>
-          <div :class="['font-heading font-semibold text-lg leading-none transition-colors', scrolled ? 'text-brown' : 'text-warm-white']">
-            Pheonix
-          </div>
-          <div :class="['text-xs tracking-[0.35em] uppercase transition-colors', scrolled ? 'text-gold' : 'text-gold-light']">
-            Healing Practice
-          </div>
-        </div>
-      </a>
+  <header class="transom">
+    <nav class="came strip" aria-label="Main">
+      <RouterLink to="/" class="pane-dim brand" aria-label="Pheonix Healing Practice, home">
+        <span class="brand-mark"><PhoenixMark /></span>
+        <span class="brand-name">Pheonix<small>Healing Practice</small></span>
+      </RouterLink>
 
-      <!-- Desktop nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a
-          v-for="link in links"
-          :key="link.label"
-          :href="link.href"
-          :class="['text-sm font-semibold tracking-wide transition-colors hover:text-gold', scrolled ? 'text-brown' : 'text-warm-white/90']"
-        >
-          {{ link.label }}
-        </a>
-        <a
-          href="#booking"
-          class="bg-gold hover:bg-brown text-warm-white px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
-        >
-          Book Now
-        </a>
-      </div>
-
-      <!-- Hamburger -->
-      <button
-        class="md:hidden w-9 h-9 flex flex-col justify-center items-center gap-1.5 rounded-lg"
-        @click="mobileOpen = !mobileOpen"
-        aria-label="Toggle menu"
+      <RouterLink
+        v-for="l in links"
+        :key="l.to"
+        :to="l.to"
+        class="pane-dim link"
+        :class="{ active: l.name && route.name === l.name }"
+        :aria-current="l.name && route.name === l.name ? 'page' : undefined"
       >
-        <span :class="['block w-6 h-0.5 transition-all duration-300 origin-center', scrolled ? 'bg-brown' : 'bg-warm-white', mobileOpen ? 'rotate-45 translate-y-2' : '']" />
-        <span :class="['block w-6 h-0.5 transition-all duration-300', scrolled ? 'bg-brown' : 'bg-warm-white', mobileOpen ? 'opacity-0 scale-x-0' : '']" />
-        <span :class="['block w-6 h-0.5 transition-all duration-300 origin-center', scrolled ? 'bg-brown' : 'bg-warm-white', mobileOpen ? '-rotate-45 -translate-y-2' : '']" />
-      </button>
-    </div>
+        {{ l.label }}
+      </RouterLink>
 
-    <!-- Mobile menu -->
-    <div
-      :class="['md:hidden overflow-hidden transition-all duration-300 bg-cream border-t', mobileOpen ? 'max-h-96 border-cream-dark' : 'max-h-0 border-transparent']"
-    >
-      <div class="px-6 py-5 flex flex-col gap-1">
-        <a
-          v-for="link in links"
-          :key="link.label"
-          :href="link.href"
-          class="text-brown font-semibold py-2.5 border-b border-cream-dark hover:text-gold transition-colors"
-          @click="close"
-        >
-          {{ link.label }}
-        </a>
-        <a
-          href="#booking"
-          class="mt-3 bg-gold hover:bg-brown text-warm-white py-3 rounded-full text-sm font-semibold text-center transition-colors"
-          @click="close"
-        >
-          Book Now
-        </a>
-      </div>
+      <RouterLink to="/#booking" class="pane-amber btn-glass book">Book a session</RouterLink>
+
+      <button
+        class="pane-dim menu"
+        type="button"
+        :aria-expanded="open"
+        aria-controls="mobile-menu"
+        @click="open = !open"
+      >
+        <span class="sr-only">{{ open ? 'Close menu' : 'Open menu' }}</span>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+          <g stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path :d="open ? 'M5 5l14 14' : 'M4 7h16'" />
+            <path v-if="!open" d="M4 12h16" />
+            <path :d="open ? 'M19 5L5 19' : 'M4 17h16'" />
+          </g>
+        </svg>
+      </button>
+    </nav>
+
+    <div v-show="open" id="mobile-menu" class="came drop">
+      <RouterLink v-for="l in links" :key="l.to" :to="l.to" class="pane-dim drop-link" :class="{ active: l.name && route.name === l.name }">
+        {{ l.label }}
+      </RouterLink>
     </div>
-  </nav>
+  </header>
 </template>
+
+<style scoped>
+.transom {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.strip {
+  display: grid;
+  grid-template-columns: auto repeat(5, minmax(0, auto)) 1fr auto;
+  align-items: stretch;
+  padding-block: 6px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.5);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.45rem 1rem 0.45rem 0.6rem;
+  text-decoration: none;
+}
+.brand-mark { width: 42px; height: 42px; }
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--color-marigold);
+}
+.brand-name small {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-on-room-soft);
+}
+.link {
+  display: flex;
+  align-items: center;
+  padding: 0 1.05rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.link:hover { filter: brightness(1.6) saturate(1.2); }
+.link.active,
+.drop-link.active {
+  background: var(--seeds), linear-gradient(160deg, #f8b54a, #c9661a);
+  color: var(--color-lead);
+}
+/* the empty pane between links and booking is glass too */
+.strip::after {
+  content: '';
+  grid-column: 7;
+  grid-row: 1;
+  background: var(--seeds), linear-gradient(160deg, #2c160c, #20100a);
+}
+[data-element='earth'] .strip::after { background: var(--seeds), linear-gradient(160deg, #2a210d, #1d1709); }
+[data-element='air'] .strip::after { background: var(--seeds), linear-gradient(160deg, #1a2347, #121935); }
+.book {
+  grid-column: 8;
+  padding: 0 1.4rem;
+  font-size: 1.1rem;
+}
+.menu { display: none; }
+.drop { display: none; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .strip { grid-template-columns: auto 1fr auto auto; }
+  .link { display: none; }
+  .strip::after { grid-column: 2; }
+  .book { grid-column: 3; padding: 0 1rem; font-size: 1rem; }
+  .menu {
+    grid-column: 4;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    border: 0;
+    color: var(--text-on-room);
+    cursor: pointer;
+  }
+  .drop {
+    display: grid;
+    padding-top: 0;
+  }
+  .drop[style*='none'] { display: none; }
+  .drop-link {
+    padding: 0.95rem 1.2rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+}
+@media (max-width: 420px) {
+  .brand-name small { display: none; }
+  .brand { padding-right: 0.7rem; }
+  .brand-mark { width: 36px; height: 36px; }
+}
+</style>

@@ -1,0 +1,810 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T15:53:58.774Z",
+  "title": "Design System: Pheonix Healing Practice",
+  "extensions": {
+    "colorMeta": {
+      "amber": {
+        "role": "primary",
+        "displayName": "Firelit Amber",
+        "canonical": "#f0912a",
+        "oklch": "oklch(74.1% 0.157 61.9)",
+        "tonalRamp": [
+          "#170600",
+          "#3e1a00",
+          "#693100",
+          "#974900",
+          "#bd6b00",
+          "#d6955b",
+          "#eebf97",
+          "#ffe9d2"
+        ]
+      },
+      "amber-deep": {
+        "role": "primary",
+        "displayName": "Deep Amber",
+        "canonical": "#b9561a",
+        "oklch": "oklch(56.8% 0.145 46.8)",
+        "tonalRamp": [
+          "#180500",
+          "#3f1802",
+          "#6b2d06",
+          "#9a440d",
+          "#c06737",
+          "#d9916e",
+          "#f0bca3",
+          "#ffe7d8"
+        ]
+      },
+      "marigold": {
+        "role": "secondary",
+        "displayName": "Marigold",
+        "canonical": "#f6c143",
+        "oklch": "oklch(83.7% 0.149 85.0)",
+        "tonalRamp": [
+          "#130900",
+          "#352100",
+          "#5b3c00",
+          "#835800",
+          "#a77a00",
+          "#c3a055",
+          "#dfc694",
+          "#fbedd0"
+        ]
+      },
+      "ruby": {
+        "role": "secondary",
+        "displayName": "Ruby Glass",
+        "canonical": "#7a1420",
+        "oklch": "oklch(37.9% 0.135 21.1)",
+        "tonalRamp": [
+          "#180505",
+          "#3f1617",
+          "#6b2a2c",
+          "#9a4042",
+          "#c06262",
+          "#d98d8c",
+          "#f1b9b7",
+          "#ffe5e4"
+        ]
+      },
+      "ember": {
+        "role": "secondary",
+        "displayName": "Ember",
+        "canonical": "#b8341b",
+        "oklch": "oklch(52.3% 0.173 32.8)",
+        "tonalRamp": [
+          "#1b0301",
+          "#451007",
+          "#742112",
+          "#a7341e",
+          "#ce5841",
+          "#e58874",
+          "#fab6a7",
+          "#ffe4db"
+        ]
+      },
+      "lead": {
+        "role": "neutral",
+        "displayName": "Came Lead",
+        "canonical": "#17110e",
+        "oklch": "oklch(18.4% 0.012 48.1)",
+        "tonalRamp": [
+          "#0c0b0a",
+          "#272423",
+          "#46413e",
+          "#67605c",
+          "#88817d",
+          "#aaa4a1",
+          "#ccc8c6",
+          "#f0eeed"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Pane Ink",
+        "canonical": "#2a1a12",
+        "oklch": "oklch(23.6% 0.030 47.4)",
+        "tonalRamp": [
+          "#0e0a08",
+          "#2b231f",
+          "#4c3f39",
+          "#6e5d54",
+          "#907e75",
+          "#b0a29a",
+          "#d1c7c1",
+          "#f3edea"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#5b4130",
+        "oklch": "oklch(39.9% 0.045 54.2)",
+        "tonalRamp": [
+          "#0f0a07",
+          "#2e221b",
+          "#4f3e32",
+          "#745b4c",
+          "#967c6c",
+          "#b5a093",
+          "#d5c6bc",
+          "#f5ece7"
+        ]
+      },
+      "clear": {
+        "role": "neutral",
+        "displayName": "Clear Glass",
+        "canonical": "#efe3c6",
+        "oklch": "oklch(91.8% 0.040 88.2)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#29251a",
+          "#484131",
+          "#6a604a",
+          "#8b826a",
+          "#aca492",
+          "#cec9bb",
+          "#f1eee6"
+        ]
+      },
+      "clear-hi": {
+        "role": "neutral",
+        "displayName": "Clear Glass Highlight",
+        "canonical": "#f7efdc",
+        "oklch": "oklch(95.3% 0.027 87.9)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#28251e",
+          "#464237",
+          "#676152",
+          "#888273",
+          "#aaa598",
+          "#ccc9c0",
+          "#f0eee9"
+        ]
+      },
+      "room": {
+        "role": "neutral",
+        "displayName": "Dusk Room",
+        "canonical": "#1a0f0b",
+        "oklch": "oklch(18.2% 0.021 40.8)",
+        "tonalRamp": [
+          "#0d0a09",
+          "#292421",
+          "#49403c",
+          "#6b5e59",
+          "#8d7f7a",
+          "#ada29e",
+          "#cfc7c4",
+          "#f2edec"
+        ]
+      },
+      "room-2": {
+        "role": "neutral",
+        "displayName": "Dusk Room Deep",
+        "canonical": "#2b170e",
+        "oklch": "oklch(23.0% 0.036 44.7)",
+        "tonalRamp": [
+          "#0f0a08",
+          "#2d221e",
+          "#4e3e37",
+          "#725c52",
+          "#947d72",
+          "#b3a098",
+          "#d4c6c0",
+          "#f5ede9"
+        ]
+      },
+      "dim-glass": {
+        "role": "neutral",
+        "displayName": "Dim Umber Glass",
+        "canonical": "#3a1d10",
+        "oklch": "oklch(26.8% 0.051 44.2)",
+        "tonalRamp": [
+          "#100907",
+          "#2f211b",
+          "#523c33",
+          "#78594c",
+          "#9a7a6c",
+          "#b99f94",
+          "#d8c5bd",
+          "#f7ece7"
+        ]
+      },
+      "text-on-room": {
+        "role": "neutral",
+        "displayName": "Room Text",
+        "canonical": "#f3e7cf",
+        "oklch": "oklch(93.1% 0.034 84.6)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#29251c",
+          "#484134",
+          "#69604e",
+          "#8b816e",
+          "#aca495",
+          "#cec9bd",
+          "#f1eee8"
+        ]
+      },
+      "text-on-room-soft": {
+        "role": "neutral",
+        "displayName": "Room Text Soft",
+        "canonical": "#d9c3a0",
+        "oklch": "oklch(82.7% 0.053 79.3)",
+        "tonalRamp": [
+          "#0e0a05",
+          "#2c2417",
+          "#4c402c",
+          "#705e42",
+          "#927f62",
+          "#b1a38c",
+          "#d2c8b7",
+          "#f4eee4"
+        ]
+      },
+      "earth-room": {
+        "role": "neutral",
+        "displayName": "Soil-Olive Room",
+        "canonical": "#15120a",
+        "oklch": "oklch(18.3% 0.016 89.9)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262521",
+          "#44423b",
+          "#646158",
+          "#868279",
+          "#a8a59d",
+          "#cbc9c4",
+          "#efeeeb"
+        ]
+      },
+      "earth-dim-glass": {
+        "role": "neutral",
+        "displayName": "Dim Olive Glass",
+        "canonical": "#30260f",
+        "oklch": "oklch(27.4% 0.040 86.2)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#29251b",
+          "#484131",
+          "#6a604a",
+          "#8c816a",
+          "#ada492",
+          "#cfc9bc",
+          "#f2eee7"
+        ]
+      },
+      "earth-heading": {
+        "role": "secondary",
+        "displayName": "Ochre Heading",
+        "canonical": "#e8c27c",
+        "oklch": "oklch(83.2% 0.098 82.0)",
+        "tonalRamp": [
+          "#110a01",
+          "#302206",
+          "#543e10",
+          "#7a5c1c",
+          "#9d7d40",
+          "#baa174",
+          "#d9c7a7",
+          "#f8eddb"
+        ]
+      },
+      "earth-ink-heading": {
+        "role": "secondary",
+        "displayName": "Walnut Ink",
+        "canonical": "#5c3820",
+        "oklch": "oklch(37.8% 0.063 53.4)",
+        "tonalRamp": [
+          "#110905",
+          "#312117",
+          "#553c2c",
+          "#7b5843",
+          "#9e7963",
+          "#bc9e8c",
+          "#dac4b7",
+          "#f8ece4"
+        ]
+      },
+      "air-room": {
+        "role": "neutral",
+        "displayName": "Twilight Indigo Room",
+        "canonical": "#0d1122",
+        "oklch": "oklch(18.3% 0.035 272.5)",
+        "tonalRamp": [
+          "#0a0b0f",
+          "#22252e",
+          "#3d414f",
+          "#5b6074",
+          "#7c8296",
+          "#a0a4b5",
+          "#c5c9d5",
+          "#eceef5"
+        ]
+      },
+      "air-dim-glass": {
+        "role": "neutral",
+        "displayName": "Dim Indigo Glass",
+        "canonical": "#1d2852",
+        "oklch": "oklch(29.2% 0.078 270.0)",
+        "tonalRamp": [
+          "#080b14",
+          "#1e2437",
+          "#37415f",
+          "#525f89",
+          "#7281ad",
+          "#98a4c7",
+          "#bfc9e2",
+          "#e9eefd"
+        ]
+      },
+      "air-heading": {
+        "role": "secondary",
+        "displayName": "Pale Sky Heading",
+        "canonical": "#cfe4f6",
+        "oklch": "oklch(90.9% 0.033 244.0)",
+        "tonalRamp": [
+          "#080c0f",
+          "#1f262c",
+          "#38444e",
+          "#536371",
+          "#748593",
+          "#99a7b3",
+          "#c1cbd3",
+          "#eaeff4"
+        ]
+      },
+      "air-ink-heading": {
+        "role": "secondary",
+        "displayName": "Indigo Ink",
+        "canonical": "#25336b",
+        "oklch": "oklch(34.2% 0.099 269.9)",
+        "tonalRamp": [
+          "#070a17",
+          "#1c243c",
+          "#344066",
+          "#4e5e94",
+          "#6d80b8",
+          "#94a4d1",
+          "#bdc8e9",
+          "#e7eeff"
+        ]
+      },
+      "air-clear": {
+        "role": "neutral",
+        "displayName": "Cool Clear Glass",
+        "canonical": "#e7eef0",
+        "oklch": "oklch(94.4% 0.008 216.6)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#232526",
+          "#3f4344",
+          "#5d6264",
+          "#7e8385",
+          "#a1a6a7",
+          "#c6cacb",
+          "#edefef"
+        ]
+      },
+      "chakra-root": {
+        "role": "tertiary",
+        "displayName": "Root Cabochon",
+        "canonical": "#c8202a",
+        "oklch": "oklch(53.7% 0.200 25.0)",
+        "tonalRamp": [
+          "#1d0102",
+          "#49070a",
+          "#7b1318",
+          "#b12026",
+          "#d94a48",
+          "#ef8078",
+          "#ffb1aa",
+          "#ffe1dc"
+        ]
+      },
+      "chakra-sacral": {
+        "role": "tertiary",
+        "displayName": "Sacral Cabochon",
+        "canonical": "#ee7a1a",
+        "oklch": "oklch(70.0% 0.171 52.5)",
+        "tonalRamp": [
+          "#190500",
+          "#421500",
+          "#6f2a00",
+          "#a13f00",
+          "#c76206",
+          "#df8f5c",
+          "#f5bb98",
+          "#ffe7d2"
+        ]
+      },
+      "chakra-solar": {
+        "role": "tertiary",
+        "displayName": "Solar Plexus Cabochon",
+        "canonical": "#f2c423",
+        "oklch": "oklch(83.7% 0.164 90.7)",
+        "tonalRamp": [
+          "#120a00",
+          "#332200",
+          "#593d00",
+          "#815a00",
+          "#a47d00",
+          "#c0a249",
+          "#dcc88e",
+          "#faeecd"
+        ]
+      },
+      "chakra-heart": {
+        "role": "tertiary",
+        "displayName": "Heart Cabochon",
+        "canonical": "#4fa040",
+        "oklch": "oklch(63.3% 0.155 140.6)",
+        "tonalRamp": [
+          "#020f01",
+          "#0d2d07",
+          "#1c4f12",
+          "#2c731e",
+          "#4f9642",
+          "#80b676",
+          "#afd6a8",
+          "#e0f6dc"
+        ]
+      },
+      "chakra-throat": {
+        "role": "tertiary",
+        "displayName": "Throat Cabochon",
+        "canonical": "#2f8fce",
+        "oklch": "oklch(62.4% 0.129 242.3)",
+        "tonalRamp": [
+          "#000c19",
+          "#012840",
+          "#03466d",
+          "#06679d",
+          "#3889c1",
+          "#72acd8",
+          "#a6cfef",
+          "#dbf2ff"
+        ]
+      },
+      "chakra-third-eye": {
+        "role": "tertiary",
+        "displayName": "Third Eye Cabochon",
+        "canonical": "#4a45b0",
+        "oklch": "oklch(45.9% 0.165 279.8)",
+        "tonalRamp": [
+          "#08081d",
+          "#1f1e4a",
+          "#38377c",
+          "#5353b2",
+          "#7275d8",
+          "#979deb",
+          "#bec4fd",
+          "#e8ecff"
+        ]
+      },
+      "chakra-crown": {
+        "role": "tertiary",
+        "displayName": "Crown Cabochon",
+        "canonical": "#9353c6",
+        "oklch": "oklch(56.8% 0.177 307.4)",
+        "tonalRamp": [
+          "#11051b",
+          "#301744",
+          "#532b73",
+          "#7a42a6",
+          "#9c64cb",
+          "#b990e0",
+          "#d8bbf5",
+          "#f7e7ff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero title in each element window, on clear glass in the element ink-heading colour."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles inside the lunette transom, on dim glass."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Service window names."
+      },
+      "title-sm": {
+        "displayName": "Title Small",
+        "purpose": "Step and small pane headings."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Italic one-line tagline under a hero title; italic subtitle under a service name."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All reading copy, on clear glass."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Every glass button, price and brand name."
+      }
+    },
+    "shadows": [
+      {
+        "name": "window-drop",
+        "value": "0 30px 60px -20px rgb(0 0 0 / 0.7), inset 0 0 0 1px rgb(255 255 255 / 0.04)",
+        "purpose": "Every came frame casting onto the room."
+      },
+      {
+        "name": "lunette-drop",
+        "value": "0 24px 50px -20px rgb(0 0 0 / 0.7)",
+        "purpose": "Section heading transoms."
+      },
+      {
+        "name": "nav-drop",
+        "value": "0 10px 30px rgb(0 0 0 / 0.5)",
+        "purpose": "Sticky transom nav strip."
+      },
+      {
+        "name": "clear-glass-body",
+        "value": "inset 0 0 40px rgb(120 70 20 / 0.12)",
+        "purpose": "Thickness of clear reading panes."
+      },
+      {
+        "name": "amber-rest",
+        "value": "inset 0 0 30px rgb(120 40 0 / 0.35)",
+        "purpose": "Booking pane at rest."
+      },
+      {
+        "name": "amber-lit",
+        "value": "inset 0 0 30px rgb(255 230 160 / 0.5), 0 0 48px rgb(240 145 42 / 0.55)",
+        "purpose": "Booking pane on hover/focus."
+      },
+      {
+        "name": "booking-halo",
+        "value": "0 0 0 1px rgb(255 255 255 / 0.04), 0 0 90px rgb(240 145 42 / 0.28), 0 30px 60px -20px rgb(0 0 0 / 0.7)",
+        "purpose": "Calendar window only."
+      },
+      {
+        "name": "field-focus",
+        "value": "0 0 0 4px #f0912a, 0 0 24px rgb(240 145 42 / 0.5)",
+        "purpose": "Form field focus ring."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-glass",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All brighten/dim state transitions, 0.6-0.8s."
+      },
+      {
+        "name": "brighten-amber",
+        "value": "filter: brightness(1.12) saturate(1.1); 0.6s",
+        "purpose": "Booking pane hover/focus."
+      },
+      {
+        "name": "brighten-dim",
+        "value": "filter: brightness(1.5-1.6); 0.6s",
+        "purpose": "Dim chrome panes and secondary buttons on hover."
+      },
+      {
+        "name": "brighten-window",
+        "value": "filter: brightness(1.15) saturate(1.1); 0.8s",
+        "purpose": "Illustrated window cells on hover."
+      },
+      {
+        "name": "firelight-follow",
+        "value": "quickTo 1.1s power3.out, 50% pull toward pointer, clamped -10..110%",
+        "purpose": "Light behind glass follows a fine pointer."
+      },
+      {
+        "name": "firelight-breathe",
+        "value": "radius +/-4%, intensity 0.86-1, 1.4-2.8s sine.inOut, randomised loop",
+        "purpose": "Hearth-like breathing; never a strobe."
+      },
+      {
+        "name": "firelight-scroll",
+        "value": "y 80% to 25% across element scroll, x sways +/-14%",
+        "purpose": "Touch devices: the light rises as the window scrolls past."
+      },
+      {
+        "name": "ignite",
+        "value": "intensity 0.2 to 1 and radius 6% to 46% over 2.6s, y rises over 2.8s, expo.out",
+        "purpose": "Fire rose window catching on load."
+      },
+      {
+        "name": "steps-light",
+        "value": "--lit 0 to 1, 1.4s expo.out, 0.45s stagger, once at top 70%",
+        "purpose": "Session steps light in sequence."
+      },
+      {
+        "name": "room-retint",
+        "value": "background-color 0.8s ease",
+        "purpose": "Room colour change between element pages."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transitions/animations 0.01ms; firelight still at rest with radius +6%",
+        "purpose": "Reduced motion honoured everywhere."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs",
+        "value": "420px"
+      },
+      {
+        "name": "sm",
+        "value": "540px"
+      },
+      {
+        "name": "sm-form",
+        "value": "560px"
+      },
+      {
+        "name": "md",
+        "value": "860px"
+      },
+      {
+        "name": "md-services",
+        "value": "900px"
+      },
+      {
+        "name": "md-steps",
+        "value": "980px"
+      },
+      {
+        "name": "lg",
+        "value": "1100px"
+      },
+      {
+        "name": "xl",
+        "value": "1500px"
+      }
+    ],
+    "textures": [
+      {
+        "name": "seeds",
+        "purpose": "Bubbles in hand-rolled glass; on every glass surface.",
+        "value": "SVG data URI (--seeds in src/style.css), 233x211 tile, white 30% ellipses with umber stroke at 16%"
+      },
+      {
+        "name": "streaks",
+        "purpose": "Pulled streaks; on clear and amber panes.",
+        "value": "SVG data URI (--streaks in src/style.css), 419x367 tile, white 20% wavy strokes 2-4px"
+      },
+      {
+        "name": "quarry-lattice",
+        "purpose": "Diamond lead lattice behind illustrated windows.",
+        "value": "repeating-linear-gradient(+/-62deg, #17110e 0 3px, transparent 3px 56-64px)"
+      }
+    ],
+    "glassPalettes": "Per-element procedural palettes (deep, flame, bright, pale, leaf, clear, border) live in src/lib/glass.js PALETTES; pane colours jitter lightness +/-7%."
+  },
+  "components": [
+    {
+      "name": "Book Button (amber glass)",
+      "kind": "button",
+      "refersTo": "button-book",
+      "description": "The single hot action: booking. Amber radial glass, lead text, glows when touched.",
+      "html": "<div class=\"ds-room\"><a href=\"#\" class=\"ds-btn-book\"><span>Book a session</span><span class=\"ds-price\">£60</span></a></div>",
+      "css": ".ds-room{background:#1a0f0b;padding:24px}.ds-btn-book{display:inline-flex;align-items:center;justify-content:space-between;gap:1rem;min-width:18rem;min-height:4rem;padding:1rem 1.5rem;font-family:Caprasimo, 'Cooper Black', serif;font-size:1.5rem;line-height:1.1;color:#17110e;text-decoration:none;border:4px solid #17110e;background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='233' height='211'%3E%3Cg fill='%23ffffff' fill-opacity='.3' stroke='%23663a14' stroke-opacity='.16' stroke-width='.8'%3E%3Cellipse cx='22' cy='28' rx='2.6' ry='1.8'/%3E%3Cellipse cx='97' cy='13' rx='1.5' ry='1.1'/%3E%3Cellipse cx='181' cy='61' rx='2.2' ry='1.6'/%3E%3Cellipse cx='58' cy='94' rx='1.3' ry='1'/%3E%3Cellipse cx='139' cy='129' rx='3' ry='2'/%3E%3Cellipse cx='31' cy='171' rx='1.8' ry='1.3'/%3E%3Cellipse cx='209' cy='188' rx='1.3' ry='1'/%3E%3Cellipse cx='101' cy='199' rx='2' ry='1.4'/%3E%3C/g%3E%3C/svg%3E\"),radial-gradient(120% 140% at 30% 20%,#fdd27a 0%,#f0912a 45%,#b9561a 100%);box-shadow:inset 0 0 30px rgb(120 40 0 / .35);transition:filter .6s cubic-bezier(0.16, 1, 0.3, 1),box-shadow .6s cubic-bezier(0.16, 1, 0.3, 1)}.ds-btn-book:hover,.ds-btn-book:focus-visible{filter:brightness(1.12) saturate(1.1);box-shadow:inset 0 0 30px rgb(255 230 160 / .5),0 0 48px rgb(240 145 42 / .55)}.ds-btn-book:focus-visible{outline:3px solid #f6c143;outline-offset:3px}.ds-price{padding-left:1rem;border-left:3px solid rgb(23 17 14 / .5)}"
+    },
+    {
+      "name": "Dim Glass Button",
+      "kind": "button",
+      "refersTo": "button-dim",
+      "description": "Secondary action as a dim chrome pane that brightens when backlit.",
+      "html": "<div class=\"ds-came\"><a href=\"#\" class=\"ds-btn-dim\">Explore the services <svg viewBox=\"0 0 20 20\" width=\"18\" height=\"18\" aria-hidden=\"true\"><path d=\"M4 10h11m-4-5 5 5-5 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></div>",
+      "css": ".ds-came{display:inline-grid;background:#17110e;padding:8px}.ds-btn-dim{display:inline-flex;align-items:center;justify-content:space-between;gap:.8rem;padding:1rem 1.3rem;font-family:Caprasimo, 'Cooper Black', serif;font-size:1.15rem;line-height:1.1;color:#f3e7cf;text-decoration:none;background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='233' height='211'%3E%3Cg fill='%23ffffff' fill-opacity='.3' stroke='%23663a14' stroke-opacity='.16' stroke-width='.8'%3E%3Cellipse cx='22' cy='28' rx='2.6' ry='1.8'/%3E%3Cellipse cx='97' cy='13' rx='1.5' ry='1.1'/%3E%3Cellipse cx='181' cy='61' rx='2.2' ry='1.6'/%3E%3Cellipse cx='58' cy='94' rx='1.3' ry='1'/%3E%3Cellipse cx='139' cy='129' rx='3' ry='2'/%3E%3Cellipse cx='31' cy='171' rx='1.8' ry='1.3'/%3E%3Cellipse cx='209' cy='188' rx='1.3' ry='1'/%3E%3Cellipse cx='101' cy='199' rx='2' ry='1.4'/%3E%3C/g%3E%3C/svg%3E\"),linear-gradient(160deg,#3a1d10,#2a140b);transition:filter .6s cubic-bezier(0.16, 1, 0.3, 1)}.ds-btn-dim:hover{filter:brightness(1.5)}.ds-btn-dim:focus-visible{outline:3px solid #f6c143;outline-offset:3px}"
+    },
+    {
+      "name": "Leaded Window (clear + dim panes)",
+      "kind": "card",
+      "refersTo": "came-frame",
+      "description": "A came frame holding a clear reading pane above a dim chrome row; the 8px lead is both padding and gap.",
+      "html": "<div class=\"ds-window\"><div class=\"ds-pane-clear\"><h3>Myofascial Release</h3><p class=\"ds-sub\">The earth window</p><p>Gentle, sustained pressure that lets the body release in its own time.</p></div><div class=\"ds-foot\"><p class=\"ds-pane-dim\"><span>£60</span> per session</p><p class=\"ds-pane-dim\">Explore</p></div></div>",
+      "css": ".ds-window{display:grid;gap:8px;padding:8px;max-width:26rem;background:#17110e;box-shadow:0 30px 60px -20px rgb(0 0 0 / .7),inset 0 0 0 1px rgb(255 255 255 / .04)}.ds-pane-clear{display:grid;gap:.9rem;padding:2rem;color:#2a1a12;font-family:'Alegreya Sans', 'Gill Sans', 'Segoe UI', sans-serif;font-size:1.125rem;line-height:1.6;background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='233' height='211'%3E%3Cg fill='%23ffffff' fill-opacity='.3' stroke='%23663a14' stroke-opacity='.16' stroke-width='.8'%3E%3Cellipse cx='22' cy='28' rx='2.6' ry='1.8'/%3E%3Cellipse cx='97' cy='13' rx='1.5' ry='1.1'/%3E%3Cellipse cx='181' cy='61' rx='2.2' ry='1.6'/%3E%3Cellipse cx='58' cy='94' rx='1.3' ry='1'/%3E%3Cellipse cx='139' cy='129' rx='3' ry='2'/%3E%3Cellipse cx='31' cy='171' rx='1.8' ry='1.3'/%3E%3Cellipse cx='209' cy='188' rx='1.3' ry='1'/%3E%3Cellipse cx='101' cy='199' rx='2' ry='1.4'/%3E%3C/g%3E%3C/svg%3E\"),linear-gradient(172deg,rgb(255 255 255 / .35),transparent 30%),linear-gradient(158deg,#f7efdc,#efe3c6 55%,#e4d3ae);box-shadow:inset 0 0 40px rgb(120 70 20 / .12)}.ds-pane-clear h3{margin:0;font-family:Caprasimo, 'Cooper Black', serif;font-weight:400;font-size:2.4rem;line-height:1.04;color:#5c3820}.ds-pane-clear p{margin:0;color:#5b4130}.ds-pane-clear .ds-sub{margin-top:-.4rem;font-style:italic}.ds-foot{display:grid;grid-template-columns:auto 1fr;gap:8px}.ds-pane-dim{margin:0;padding:1rem 1.3rem;font-family:'Alegreya Sans', 'Gill Sans', 'Segoe UI', sans-serif;color:#d9c3a0;background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='233' height='211'%3E%3Cg fill='%23ffffff' fill-opacity='.3' stroke='%23663a14' stroke-opacity='.16' stroke-width='.8'%3E%3Cellipse cx='22' cy='28' rx='2.6' ry='1.8'/%3E%3Cellipse cx='97' cy='13' rx='1.5' ry='1.1'/%3E%3Cellipse cx='181' cy='61' rx='2.2' ry='1.6'/%3E%3Cellipse cx='58' cy='94' rx='1.3' ry='1'/%3E%3Cellipse cx='139' cy='129' rx='3' ry='2'/%3E%3Cellipse cx='31' cy='171' rx='1.8' ry='1.3'/%3E%3Cellipse cx='209' cy='188' rx='1.3' ry='1'/%3E%3Cellipse cx='101' cy='199' rx='2' ry='1.4'/%3E%3C/g%3E%3C/svg%3E\"),linear-gradient(160deg,#3a1d10,#2a140b)}.ds-pane-dim span{font-family:Caprasimo, 'Cooper Black', serif;font-size:1.6rem;color:#f6c143}"
+    },
+    {
+      "name": "Leaded Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Warm near-white field in a 3px lead border; focus is an amber ring and glow.",
+      "html": "<div class=\"ds-clear\"><label class=\"ds-label\">Your email<input class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\"></label></div>",
+      "css": ".ds-clear{padding:1.5rem;background:linear-gradient(158deg,#f7efdc,#efe3c6 55%,#e4d3ae)}.ds-label{display:grid;gap:.4rem;font-family:'Alegreya Sans', 'Gill Sans', 'Segoe UI', sans-serif;font-weight:700;font-size:1rem;color:#2a1a12}.ds-input{width:100%;box-sizing:border-box;padding:.8rem .9rem;font-family:'Alegreya Sans', 'Gill Sans', 'Segoe UI', sans-serif;font-weight:400;font-size:1.05rem;color:#2a1a12;background:rgb(255 252 244 / .85);border:3px solid #17110e;border-radius:2px;transition:box-shadow .4s,background-color .4s}.ds-input::placeholder{color:#8a6e58}.ds-input:focus-visible{outline:none;background:#fffaf0;box-shadow:0 0 0 4px #f0912a,0 0 24px rgb(240 145 42 / .5)}.ds-input:user-invalid{border-color:#b8341b}"
+    },
+    {
+      "name": "Transom Nav",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Nav as a came strip of dim panes; the current page lights amber, booking sits at the end in amber.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-brand\">Pheonix<small>Healing Practice</small></a><a href=\"#\" class=\"ds-link\">About Penny</a><a href=\"#\" class=\"ds-link ds-active\" aria-current=\"page\">Shamanic Healing</a><a href=\"#\" class=\"ds-link\">Contact</a><span class=\"ds-fill\"></span><a href=\"#\" class=\"ds-book\">Book a session</a></nav>",
+      "css": ".ds-nav{display:grid;grid-template-columns:auto repeat(3,auto) 1fr auto;gap:8px;padding:6px 8px;background:#17110e;box-shadow:0 10px 30px rgb(0 0 0 / .5)}.ds-nav a,.ds-fill{text-decoration:none;background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='233' height='211'%3E%3Cg fill='%23ffffff' fill-opacity='.3' stroke='%23663a14' stroke-opacity='.16' stroke-width='.8'%3E%3Cellipse cx='22' cy='28' rx='2.6' ry='1.8'/%3E%3Cellipse cx='97' cy='13' rx='1.5' ry='1.1'/%3E%3Cellipse cx='181' cy='61' rx='2.2' ry='1.6'/%3E%3Cellipse cx='58' cy='94' rx='1.3' ry='1'/%3E%3Cellipse cx='139' cy='129' rx='3' ry='2'/%3E%3Cellipse cx='31' cy='171' rx='1.8' ry='1.3'/%3E%3Cellipse cx='209' cy='188' rx='1.3' ry='1'/%3E%3Cellipse cx='101' cy='199' rx='2' ry='1.4'/%3E%3C/g%3E%3C/svg%3E\"),linear-gradient(160deg,#3a1d10,#2a140b);color:#f3e7cf}.ds-nav .ds-brand{padding:.45rem 1rem;font-family:Caprasimo, 'Cooper Black', serif;font-size:1.35rem;line-height:1;color:#f6c143}.ds-brand small{display:block;margin-top:.2rem;font-family:'Alegreya Sans', 'Gill Sans', 'Segoe UI', sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.06em;color:#d9c3a0}.ds-link{display:flex;align-items:center;padding:0 1.05rem;font-family:'Alegreya Sans', 'Gill Sans', 'Segoe UI', sans-serif;font-weight:500;font-size:1rem;white-space:nowrap;transition:filter .6s cubic-bezier(0.16, 1, 0.3, 1)}.ds-link:hover{filter:brightness(1.6) saturate(1.2)}.ds-nav .ds-active{background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='233' height='211'%3E%3Cg fill='%23ffffff' fill-opacity='.3' stroke='%23663a14' stroke-opacity='.16' stroke-width='.8'%3E%3Cellipse cx='22' cy='28' rx='2.6' ry='1.8'/%3E%3Cellipse cx='97' cy='13' rx='1.5' ry='1.1'/%3E%3Cellipse cx='181' cy='61' rx='2.2' ry='1.6'/%3E%3Cellipse cx='58' cy='94' rx='1.3' ry='1'/%3E%3Cellipse cx='139' cy='129' rx='3' ry='2'/%3E%3Cellipse cx='31' cy='171' rx='1.8' ry='1.3'/%3E%3Cellipse cx='209' cy='188' rx='1.3' ry='1'/%3E%3Cellipse cx='101' cy='199' rx='2' ry='1.4'/%3E%3C/g%3E%3C/svg%3E\"),linear-gradient(160deg,#f8b54a,#c9661a);color:#17110e}.ds-nav .ds-fill{background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='233' height='211'%3E%3Cg fill='%23ffffff' fill-opacity='.3' stroke='%23663a14' stroke-opacity='.16' stroke-width='.8'%3E%3Cellipse cx='22' cy='28' rx='2.6' ry='1.8'/%3E%3Cellipse cx='97' cy='13' rx='1.5' ry='1.1'/%3E%3Cellipse cx='181' cy='61' rx='2.2' ry='1.6'/%3E%3Cellipse cx='58' cy='94' rx='1.3' ry='1'/%3E%3Cellipse cx='139' cy='129' rx='3' ry='2'/%3E%3Cellipse cx='31' cy='171' rx='1.8' ry='1.3'/%3E%3Cellipse cx='209' cy='188' rx='1.3' ry='1'/%3E%3Cellipse cx='101' cy='199' rx='2' ry='1.4'/%3E%3C/g%3E%3C/svg%3E\"),linear-gradient(160deg,#2c160c,#20100a)}.ds-nav .ds-book{display:flex;align-items:center;padding:0 1.4rem;font-family:Caprasimo, 'Cooper Black', serif;font-size:1.1rem;color:#17110e;background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='233' height='211'%3E%3Cg fill='%23ffffff' fill-opacity='.3' stroke='%23663a14' stroke-opacity='.16' stroke-width='.8'%3E%3Cellipse cx='22' cy='28' rx='2.6' ry='1.8'/%3E%3Cellipse cx='97' cy='13' rx='1.5' ry='1.1'/%3E%3Cellipse cx='181' cy='61' rx='2.2' ry='1.6'/%3E%3Cellipse cx='58' cy='94' rx='1.3' ry='1'/%3E%3Cellipse cx='139' cy='129' rx='3' ry='2'/%3E%3Cellipse cx='31' cy='171' rx='1.8' ry='1.3'/%3E%3Cellipse cx='209' cy='188' rx='1.3' ry='1'/%3E%3Cellipse cx='101' cy='199' rx='2' ry='1.4'/%3E%3C/g%3E%3C/svg%3E\"),radial-gradient(120% 140% at 30% 20%,#fdd27a 0%,#f0912a 45%,#b9561a 100%)}.ds-nav a:focus-visible{outline:3px solid #f6c143;outline-offset:3px}"
+    },
+    {
+      "name": "Lunette Section Head",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Section title set into a half-moon leaded transom of dim panes.",
+      "html": "<div class=\"ds-room\"><header class=\"ds-lunette\"><h2>Contact Penny</h2><p>No question is too small.</p></header></div>",
+      "css": ".ds-room{background:#1a0f0b;padding:24px}.ds-lunette{display:grid;gap:8px;width:fit-content;margin:0 auto;padding:8px 8px 0;text-align:center;background:#17110e;border-radius:50% 50% 0 0 / 7rem 7rem 0 0;box-shadow:0 24px 50px -20px rgb(0 0 0 / .7)}.ds-lunette>*{margin:0;background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='233' height='211'%3E%3Cg fill='%23ffffff' fill-opacity='.3' stroke='%23663a14' stroke-opacity='.16' stroke-width='.8'%3E%3Cellipse cx='22' cy='28' rx='2.6' ry='1.8'/%3E%3Cellipse cx='97' cy='13' rx='1.5' ry='1.1'/%3E%3Cellipse cx='181' cy='61' rx='2.2' ry='1.6'/%3E%3Cellipse cx='58' cy='94' rx='1.3' ry='1'/%3E%3Cellipse cx='139' cy='129' rx='3' ry='2'/%3E%3Cellipse cx='31' cy='171' rx='1.8' ry='1.3'/%3E%3Cellipse cx='209' cy='188' rx='1.3' ry='1'/%3E%3Cellipse cx='101' cy='199' rx='2' ry='1.4'/%3E%3C/g%3E%3C/svg%3E\"),linear-gradient(160deg,#3a1d10,#2a140b)}.ds-lunette h2{padding:2.8rem 3rem 1.4rem;border-radius:50% 50% 0 0 / calc(7rem - 8px) calc(7rem - 8px) 0 0;font-family:Caprasimo, 'Cooper Black', serif;font-weight:400;font-size:2.6rem;line-height:1.04;color:#f6c143}.ds-lunette p{padding:1rem 2rem;font-family:'Alegreya Sans', 'Gill Sans', 'Segoe UI', sans-serif;font-size:1.15rem;color:#d9c3a0}"
+    },
+    {
+      "name": "Chakra Cabochon",
+      "kind": "chip",
+      "refersTo": null,
+      "description": "A glass jewel set in a lead bezel with one glint; always in root-to-crown order.",
+      "html": "<div class=\"ds-jewels\"><span class=\"ds-jewel\" style=\"--j:#c8202a\"></span><span class=\"ds-jewel\" style=\"--j:#ee7a1a\"></span><span class=\"ds-jewel\" style=\"--j:#f2c423\"></span><span class=\"ds-jewel\" style=\"--j:#4fa040\"></span><span class=\"ds-jewel\" style=\"--j:#2f8fce\"></span><span class=\"ds-jewel\" style=\"--j:#4a45b0\"></span><span class=\"ds-jewel\" style=\"--j:#9353c6\"></span></div>",
+      "css": ".ds-jewels{display:flex;gap:10px;padding:16px;background:#1a0f0b}.ds-jewel{width:22px;height:22px;border-radius:50%;border:3px solid #17110e;box-sizing:border-box;background:radial-gradient(ellipse 22% 15% at 38% 35%,rgb(255 255 255 / .75) 90%,transparent 100%),var(--j)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Suncatcher Window",
+    "overview": "Every surface is a pane of hand-rolled glass held in black lead came, hung in front of a dusk room, with a light source behind it that the visitor moves. Nothing sits on a page; it sits in a window. The fire window (home) glows umber and amber, the earth window (Myofascial Release) settles into soil-olive and ochre, the wind window (Shamanic Healing) cools to twilight indigo, sky and lilac. One radial law (a rose window: seeded border ring, bead ring, leaf wreath, medallion with the element's figure) governs every hero window, and seven chakra cabochons run up each figure's spine, root at the bottom, crown at the top.\n\nThe world is warm, 1970s and hand-made rather than ecclesiastical or spa-clean. Display type is a soft-flared 70s face; reading copy sits on pale clear-seeded panes in a warm humanist sans. Lines are never vector-perfect: every procedural pane is cut from jittered points and every pane's colour is jittered a few percent, so no two pieces are the same glass. Glass plants (ivy, fern, monstera, trailing pothos) climb through frames and grow in the margins between sections.\n\nMotion is light, not movement: glass brightens where light falls and dims elsewhere; nothing slides.",
+    "keyCharacteristics": [
+      "Black lead came (8px) is the only line ink and the only gap between panes.",
+      "A dark, element-tinted room glows behind all glass; the page itself is the room.",
+      "Pale clear-seeded panes carry all long reading; dim coloured panes carry chrome.",
+      "Amber glass is the single hot action colour.",
+      "Procedural, seeded, slightly wobbly geometry; nothing perfectly regular.",
+      "A breathing firelight follows pointer (fine pointers) or rises with scroll (touch)."
+    ],
+    "rules": [
+      {
+        "name": "The Reserved Fire Rule",
+        "body": "Amber as a UI pane belongs to booking and the active state only. Amber inside illustrated glass (rose windows, the portrait arch) is fire, not action, and never carries a label.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Lead Rule",
+        "body": "All structural line work is the single lead colour (lead). No grey hairlines, no coloured borders on panes.",
+        "section": "colors"
+      },
+      {
+        "name": "The Display-Only-Flare Rule",
+        "body": "Caprasimo is for headings, buttons, prices and the brand name. Never for paragraphs, labels or fields.",
+        "section": "typography"
+      },
+      {
+        "name": "The Balanced Headline Rule",
+        "body": "Headings use `text-wrap: balance`, body uses `text-wrap: pretty`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Backlight Rule",
+        "body": "Interaction never moves a pane. Hover and focus raise `brightness`/`saturate` (dim glass to 1.5–1.6, amber to 1.12, windows to 1.15) over 0.6–0.8s on cubic-bezier(0.16, 1, 0.3, 1).",
+        "section": "elevation"
+      },
+      {
+        "name": "The Glass Texture Rule",
+        "body": "Every glass surface carries the seeds texture (bubbles); clear and amber panes also carry pulled streaks. Untextured flat fills read as plastic.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** set every surface as glass inside lead came: 8px lead frame and gaps, never a free-floating card.",
+      "**Do** put all reading text on clear seeded glass in ink or soft ink; keep dim glass for chrome and short lines.",
+      "**Do** reserve amber panes for booking and the active state, with lead-coloured text.",
+      "**Do** retint a new element page only through `data-element` (room, dim glass, room heading, ink heading).",
+      "**Do** generate new glass procedurally from a seeded RNG with jittered points and jittered pane colours.",
+      "**Do** express interaction as light: brightness, saturation and glow, 0.6–0.8s on cubic-bezier(0.16, 1, 0.3, 1).",
+      "**Do** keep chakra colours in root-to-crown order and only as set cabochons."
+    ],
+    "donts": [
+      "**Don't** slide, scale or translate panes on hover or scroll; glass brightens, nothing slides.",
+      "**Don't** introduce grey or coloured hairline borders; the only line is lead.",
+      "**Don't** round pane corners; curves belong to window silhouettes (lunette, arch, rose).",
+      "**Don't** use amber as a decorative UI fill, badge or secondary button.",
+      "**Don't** draw perfectly regular vector geometry for glass; every cut wobbles.",
+      "**Don't** set paragraphs or form text in Caprasimo.",
+      "**Don't** flicker fast: the firelight breathes over seconds, never strobes, and stands still under reduced motion."
+    ]
+  }
+}
