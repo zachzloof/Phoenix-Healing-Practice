@@ -21,8 +21,8 @@ const year = new Date().getFullYear()
     <div class="came grid">
       <div class="pane-dim brand">
         <span class="mark"><PhoenixMark /></span>
-        <p class="name">Pheonix Healing Practice</p>
-        <p class="tag">Holistic healing for body, mind &amp; spirit, in {{ CONTACT.location }}.</p>
+        <p class="name">Phoenix Healing Practice</p>
+        <p class="tag">Holistic healing for body, mind and spirit in {{ CONTACT.location }}.</p>
         <RouterLink to="/#booking" class="pane-amber btn-glass book">Book a session · {{ CONTACT.price }}</RouterLink>
       </div>
       <nav class="pane-dim col" aria-label="Footer">
@@ -40,7 +40,7 @@ const year = new Date().getFullYear()
     </div>
     <div class="base">
       <ChakraRule />
-      <p>© {{ year }} Pheonix Healing Practice · Penny Theophanous · Made with love in Essex</p>
+      <p>© {{ year }} Phoenix Healing Practice · Penny Theophanous · Made with love in Essex</p>
     </div>
   </footer>
 </template>

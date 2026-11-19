@@ -48,7 +48,7 @@ async function handleSubmit() {
         <div class="pane-clear form-pane">
           <div v-if="submitted" class="sent" role="status">
             <h3>Message sent</h3>
-            <p>Thank you for reaching out. Penny will be in touch with you very soon.</p>
+            <p>Thank you for getting in touch. I'll reply as soon as I can.</p>
           </div>
 
           <form v-else @submit.prevent="handleSubmit">

@@ -19,9 +19,9 @@ const links = [
 <template>
   <header class="transom">
     <nav class="came strip" aria-label="Main">
-      <RouterLink to="/" class="pane-dim brand" aria-label="Pheonix Healing Practice, home">
+      <RouterLink to="/" class="pane-dim brand" aria-label="Phoenix Healing Practice, home">
         <span class="brand-mark"><PhoenixMark /></span>
-        <span class="brand-name">Pheonix<small>Healing Practice</small></span>
+        <span class="brand-name">Phoenix<small>Healing Practice</small></span>
       </RouterLink>
 
       <RouterLink

@@ -21,7 +21,7 @@ const seed = computed(() => (props.service === 'mfr' ? 17 : 31))
     :line="s.line"
     :secondary="{ label: 'Ask Penny a question', to: '/#contact' }"
   >
-    <p>{{ s.summary }} With Penny Theophanous in {{ CONTACT.location }}.</p>
+    <p>{{ s.summary }} Sessions are with Penny Theophanous in {{ CONTACT.location }}.</p>
   </ElementHero>
 
   <section class="section" :aria-labelledby="`${s.key}-what`">
@@ -44,7 +44,7 @@ const seed = computed(() => (props.service === 'mfr' ? 17 : 31))
     </div>
   </section>
 
-  <HowItWorks :element="s.element" title="What to expect" lede="Every session is tailored to you. This is the shape it usually takes." />
+  <HowItWorks :element="s.element" title="What to expect" lede="Every session is tailored to you, but this is the shape it usually takes." />
 
   <section class="section" aria-labelledby="other-title">
     <div class="wrap came other" :data-element="other.element">

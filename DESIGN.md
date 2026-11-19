@@ -1,5 +1,5 @@
 ---
-name: Pheonix Healing Practice
+name: Phoenix Healing Practice
 description: Hand-leaded suncatcher windows with living firelight behind them, one window per element.
 colors:
   amber: "#f0912a"
@@ -129,7 +129,7 @@ components:
     padding: "0.8rem 0.9rem"
 ---
 
-# Design System: Pheonix Healing Practice
+# Design System: Phoenix Healing Practice
 
 ## Overview
 

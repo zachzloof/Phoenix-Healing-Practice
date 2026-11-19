@@ -12,12 +12,12 @@ import ContactSection from '../components/ContactSection.vue'
   <ElementHero
     element="fire"
     :seed="7"
-    title="Pheonix Healing Practice"
+    title="Phoenix Healing Practice"
     line="Release the body. Rekindle the spirit."
   >
     <p>
-      Myofascial Release and Shamanic Healing with Penny Theophanous, in Chelmsford, Essex.
-      Gentle, intuitive work for body, mind and spirit.
+      Myofascial Release and Shamanic Healing with Penny Theophanous in Chelmsford, Essex:
+      gentle, intuitive care for body, mind and spirit.
     </p>
   </ElementHero>
   <AboutSection />

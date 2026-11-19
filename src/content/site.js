@@ -23,13 +23,13 @@ export const SERVICES = {
     summary:
       'A gentle, hands-on therapy targeting the fascia, the connective tissue that surrounds every muscle, bone, nerve and organ.',
     body: [
-      'A gentle, hands-on therapy targeting the fascia — the connective tissue that surrounds every muscle, bone, nerve and organ.',
-      'Through sustained, gentle pressure, MFR releases restrictions, restoring freedom of movement and addressing the root cause of pain rather than just the symptoms.',
+      'Fascia is the web of connective tissue that surrounds and supports every muscle, bone, nerve and organ. When it becomes tight or restricted, it can cause pain and limit how freely you move.',
+      'Using sustained, gentle pressure, Myofascial Release eases these restrictions, restoring freedom of movement and addressing the underlying cause of pain rather than just its symptoms.',
     ],
     idealFor: [
       'Chronic pain & fibromyalgia',
       'Sports injuries & recovery',
-      'Postural problems & stiffness',
+      'Postural issues & stiffness',
       'Stress-related tension',
       'Headaches & migraines',
     ],
@@ -41,19 +41,19 @@ export const SERVICES = {
     name: 'Shamanic Healing',
     short: 'Shamanic',
     to: '/shamanic-healing',
-    line: 'Breath, rhythm and spirit, carried home.',
+    line: 'Breath, rhythm and spirit, brought back into balance.',
     summary:
       "Drawing on humanity's oldest healing traditions, shamanic healing recognises that illness often has a spiritual dimension alongside the physical.",
     body: [
-      "Drawing on humanity's oldest healing traditions, shamanic healing recognises that illness often has a spiritual dimension alongside the physical.",
-      'Using rhythmic sound, sacred practices, and deep intuitive guidance, this work restores balance and wholeness — reconnecting you to your inner wisdom and the healing power of the natural world.',
+      'Shamanic practice works with the spiritual side of wellbeing: the part of us that can feel lost, depleted or disconnected, even when the body is well.',
+      'Through rhythmic sound, sacred practice and intuitive guidance, this work helps restore balance and wholeness, reconnecting you with your inner wisdom and the healing power of the natural world.',
     ],
     idealFor: [
       'Spiritual disconnection',
       'Emotional trauma & grief',
       'Life transitions & crossroads',
       'Anxiety & low mood',
-      'Seeking deeper meaning',
+      'A search for deeper meaning',
     ],
   },
 }
@@ -61,19 +61,19 @@ export const SERVICES = {
 export const STEPS = [
   {
     title: 'Book your session',
-    text: 'Choose a time that works for you through the online booking calendar. Sessions take place in Chelmsford, Essex.',
+    text: 'Choose a time that suits you using the online booking calendar. All sessions take place in Chelmsford, Essex.',
   },
   {
     title: 'Your first conversation',
-    text: 'We begin with a gentle conversation about what brings you here, your health history, and what you hope to experience.',
+    text: 'We begin with a relaxed conversation about what brings you here, your health history and what you hope to gain from our time together.',
   },
   {
     title: 'The session',
-    text: "You remain fully clothed throughout. Penny works with sensitivity and presence, listening to your body's own wisdom.",
+    text: 'You remain fully clothed throughout. I work with sensitivity and care, guided by what your body is telling me.',
   },
   {
     title: 'Integration & aftercare',
-    text: 'Afterwards we talk about what arose and how to support your ongoing healing journey. You are never alone in this process.',
+    text: 'Afterwards, we talk through what came up and how best to support your healing from here. You are never alone in this process.',
   },
 ]
 
@@ -83,7 +83,7 @@ export const TESTIMONIALS = [
   {
     placeholder: true,
     quote:
-      'I was suffering from chronic back pain for years. After just three sessions with Penny, the relief was remarkable. Her intuitive touch and healing presence made me feel completely safe and understood.',
+      'I had suffered from chronic back pain for years. After just three sessions with Penny, the relief was remarkable. Her intuitive touch and healing presence made me feel completely safe and understood.',
     name: 'Sarah M.',
     place: 'Chelmsford',
     service: 'Myofascial Release',

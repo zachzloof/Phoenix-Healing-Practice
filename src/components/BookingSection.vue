@@ -65,7 +65,7 @@ onBeforeUnmount(() => io?.disconnect())
         <div class="pane-clear cal">
           <div ref="embed" class="embed" />
           <p v-if="failed" class="fallback">
-            The booking calendar couldn't load. Please
+            The booking calendar could not be loaded. Please
             <a :href="`mailto:${CONTACT.email}`">email Penny</a> or call
             <a :href="CONTACT.phoneHref">{{ CONTACT.phone }}</a> to book.
           </p>

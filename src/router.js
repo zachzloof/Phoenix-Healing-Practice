@@ -2,18 +2,18 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from './views/HomeView.vue'
 
 const routes = [
-  { path: '/', name: 'home', component: HomeView, meta: { element: 'fire', title: 'Pheonix Healing Practice · Chelmsford, Essex' } },
+  { path: '/', name: 'home', component: HomeView, meta: { element: 'fire', title: 'Phoenix Healing Practice · Chelmsford, Essex' } },
   {
     path: '/myofascial-release',
     name: 'mfr',
     component: () => import('./views/MfrView.vue'),
-    meta: { element: 'earth', title: 'Myofascial Release · Pheonix Healing Practice' },
+    meta: { element: 'earth', title: 'Myofascial Release · Phoenix Healing Practice' },
   },
   {
     path: '/shamanic-healing',
     name: 'shamanic',
     component: () => import('./views/ShamanicView.vue'),
-    meta: { element: 'air', title: 'Shamanic Healing · Pheonix Healing Practice' },
+    meta: { element: 'air', title: 'Shamanic Healing · Phoenix Healing Practice' },
   },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
@@ -35,6 +35,6 @@ export const router = createRouter({
 })
 
 router.afterEach((to) => {
-  document.title = to.meta.title || 'Pheonix Healing Practice'
+  document.title = to.meta.title || 'Phoenix Healing Practice'
   document.documentElement.dataset.element = to.meta.element || 'fire'
 })

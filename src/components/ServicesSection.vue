@@ -15,8 +15,8 @@ const list = [SERVICES.mfr, SERVICES.shamanic]
       <header class="section-head">
         <h2 id="services-title">Two windows, one practice</h2>
         <p>
-          Holistic healing that honours your whole self: body, mind, and spirit. Every session is
-          tailored to your unique needs.
+          Holistic healing that honours the whole of you: body, mind and spirit. Every session is
+          tailored to your individual needs.
         </p>
       </header>
 

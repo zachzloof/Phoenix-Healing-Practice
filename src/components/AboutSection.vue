@@ -27,21 +27,21 @@ const roles = [
       <div class="pane-clear words">
         <h2 id="about-title">Meet Penny Theophanous</h2>
         <p>
-          My name is Penny Theophanous, and I am a certified practitioner in Myofascial Release and
-          Shamanic Healing, based in the heart of Chelmsford, Essex.
+          I'm Penny Theophanous, a certified practitioner of Myofascial Release and Shamanic Healing,
+          based in Chelmsford, Essex.
         </p>
         <p>
-          My journey into healing began through my own experience of chronic pain and disconnection.
-          Through the transformative power of myofascial release and shamanic practice, I found not
-          just relief, but a profound reconnection with my body, mind, and spirit.
+          My path into healing began with my own experience of chronic pain and disconnection.
+          Myofascial release and shamanic practice brought me not only relief, but a profound
+          reconnection with my body, mind and spirit.
         </p>
         <p>
-          I believe true healing works on every level. Whether you come to me with physical tension,
-          emotional blocks, or a sense of feeling lost, my approach is always gentle, intuitive, and
-          deeply respectful of your individual journey.
+          I believe true healing happens on every level. Whether you come to me with physical tension,
+          emotional blocks or simply a sense of being lost, my approach is always gentle, intuitive
+          and deeply respectful of your individual journey.
         </p>
         <blockquote>
-          “Each session is a sacred space where you are truly seen, heard, and held.”
+          “Each session is a sacred space where you are truly seen, heard and held.”
         </blockquote>
         <ul class="roles">
           <li v-for="r in roles" :key="r.label"><ChakraJewel :chakra="r.chakra" :size="18" />{{ r.label }}</li>

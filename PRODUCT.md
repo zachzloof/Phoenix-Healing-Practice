@@ -38,7 +38,7 @@ One practitioner offering both deep physical fascia work and shamanic/energetic 
 
 ## Brand Commitments
 
-- Name: **Pheonix Healing Practice**. This is the client's chosen spelling; do not "correct" it without asking.
+- Name: **Phoenix Healing Practice**. This is the client's chosen spelling; do not "correct" it without asking.
 - Practitioner: Penny Theophanous.
 - Contact: penny@patch-a-mumma.co.uk · 07561 702 154 · Chelmsford, Essex.
 - The user explicitly asked for: an emphasis on fire and healing energies, a hippie feel, plants everywhere, intricate and highly creative detail, chakra motifs dotted throughout, and a different element per service page.
