@@ -1,0 +1,8 @@
+node_modules
+# throwaway build of the app, raw recordings, self-check frames
+.build
+raw
+frames
+fixtures/generated
+# finished videos are large; host them elsewhere
+output

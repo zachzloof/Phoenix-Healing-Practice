@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<title>Phoenix Healing Practice · title card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400&family=Caprasimo&display=block" rel="stylesheet" />
+<style>
+  /* Rendered to PNG by postprocess.ts at the video's exact size. Sizes scale with
+     the frame (vmin) so one card serves both 1920x1080 and 390x844. */
+  html, body { margin: 0; height: 100%; }
+  body {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background:
+      radial-gradient(60% 55% at 50% 46%, rgb(160 70 20 / .55), transparent 70%),
+      radial-gradient(120% 90% at 50% 120%, #3a1a0c, transparent 60%),
+      #1a0f0b;
+    color: #f3e7cf;
+    font-family: 'Alegreya Sans', sans-serif;
+  }
+  /* leaded border, like the site's windows */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 2.2vmin;
+    border: 0.9vmin solid #17110e;
+    box-shadow: inset 0 0 0 0.35vmin rgb(246 193 67 / .22), 0 0 0 0.35vmin rgb(246 193 67 / .12);
+  }
+  .card {
+    display: grid;
+    justify-items: center;
+    gap: 3.2vmin;
+    width: min(86vw, 120vmin);
+    text-align: center;
+  }
+  .mark { width: 17vmin; height: 17vmin; filter: drop-shadow(0 0 4vmin rgb(240 145 42 / .55)); }
+  h1 {
+    margin: 0;
+    font-family: 'Caprasimo', serif;
+    font-weight: 400;
+    font-size: 9.2vmin;
+    line-height: 1.02;
+    color: #f6c143;
+    text-shadow: 0 0.5vmin 0 #17110e, 0 0 6vmin rgb(240 145 42 / .35);
+  }
+  .jewels { display: flex; gap: 2.2vmin; align-items: center; }
+  .jewels::before, .jewels::after { content: ''; width: 9vmin; height: 0.45vmin; background: #17110e; box-shadow: 0 0 0 0.15vmin rgb(246 193 67 / .3); }
+  .jewels i { width: 2.1vmin; height: 2.1vmin; border: 0.45vmin solid #17110e; border-radius: 50%; background: radial-gradient(circle at 36% 32%, #fffa 0 14%, transparent 45%), var(--c); }
+  p {
+    margin: 0;
+    max-width: 34em;
+    font-size: 3.5vmin;
+    font-style: italic;
+    line-height: 1.35;
+    color: #d9c3a0;
+  }
+  @media (orientation: portrait) {
+    .card { gap: 5vmin; }
+    .mark { width: 26vmin; height: 26vmin; }
+    h1 { font-size: 13.5vmin; }
+    p { font-size: 5.4vmin; }
+    .jewels i { width: 3.4vmin; height: 3.4vmin; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="31" fill="#17110e" />
+      <circle cx="32" cy="32" r="27" fill="#5e0d16" />
+      <path d="M32 54c-9-4-13-12-9-22 2 5 5 7 6 7-2-8 1-15 3-23 2 8 5 15 3 23 1 0 4-2 6-7 4 10 0 18-9 22z" fill="#e2621f" />
+      <path d="M32 50c-4-3-6-8-4-13 2 3 3 4 4 4 1 0 2-1 4-4 2 5 0 10-4 13z" fill="#f6c143" />
+      <path d="M29 30C22 26 14 27 9 24c4 7 12 10 19 10z" fill="#f0912a" />
+      <path d="M35 30c7-4 15-3 20-6-4 7-12 10-19 10z" fill="#f0912a" />
+      <g fill="none" stroke="#17110e" stroke-width="1.8" stroke-linejoin="round">
+        <path d="M32 54c-9-4-13-12-9-22 2 5 5 7 6 7-2-8 1-15 3-23 2 8 5 15 3 23 1 0 4-2 6-7 4 10 0 18-9 22z" />
+        <path d="M32 50c-4-3-6-8-4-13 2 3 3 4 4 4 1 0 2-1 4-4 2 5 0 10-4 13z" />
+        <path d="M29 30C22 26 14 27 9 24c4 7 12 10 19 10z" />
+        <path d="M35 30c7-4 15-3 20-6-4 7-12 10-19 10z" />
+      </g>
+      <circle cx="32" cy="32" r="27" fill="none" stroke="#17110e" stroke-width="2.5" />
+    </svg>
+    <h1>Phoenix Healing Practice</h1>
+    <div class="jewels" aria-hidden="true">
+      <i style="--c:#c8102e"></i><i style="--c:#f0812a"></i><i style="--c:#f6c143"></i><i style="--c:#4f9a2a"></i><i style="--c:#3a8fd6"></i><i style="--c:#4b3fa8"></i><i style="--c:#9b4fc4"></i>
+    </div>
+    <p>A hand-built stained-glass website for a Chelmsford healer, where every service page is its own elemental world.</p>
+  </div>
+</body>
+</html>

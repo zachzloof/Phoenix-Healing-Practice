@@ -1,3 +1,18 @@
 {
-  "buildPath": "comp"
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "demo/title-card.html"
+        ],
+        "createdAt": "2026-11-19T15:33:27.031Z",
+        "reason": "Claude: video title card deliberately echoes the site's firelit stained-glass world, which uses the same radial firelight behind its windows (ElementHero.vue .quarry backgrounds); demo-only asset, not shipped"
+      }
+    ]
+  }
 }

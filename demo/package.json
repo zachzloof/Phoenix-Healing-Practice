@@ -1,0 +1,13 @@
+{
+  "name": "phoenix-healing-demo",
+  "private": true,
+  "description": "Repeatable Playwright walkthrough recording for the Phoenix Healing Practice site",
+  "type": "module",
+  "scripts": {
+    "seed": "node seed.ts",
+    "record": "playwright install chromium && node run.ts"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
+  }
+}

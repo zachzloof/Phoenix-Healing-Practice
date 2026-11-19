@@ -1,0 +1,13 @@
+{
+  "_note": "Demo persona for the walkthrough. Invented; the phone number is from Ofcom's reserved drama range and the email uses the reserved example.com domain.",
+  "name": "Claire Whitmore",
+  "email": "claire.whitmore@example.com",
+  "phone": "07700 900461",
+  "service": "shamanic",
+  "message": "Hi Penny, I lost my dad in the spring and I've felt stuck and far away from myself ever since. A friend at yoga recommended you. Could we have a quick chat before I book?",
+  "booking": {
+    "service": "Shamanic Healing",
+    "preferredTime": "11:00",
+    "minDaysAhead": 3
+  }
+}
